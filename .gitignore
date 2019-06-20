@@ -1,0 +1,40 @@
+*.swp
+*.*~
+project.lock.json
+.DS_Store
+*.pyc
+nupkg/
+
+# Visual Studio Code
+.vscode
+
+# User-specific files
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebugPublic/
+[Rr]elease/
+[Rr]eleases/
+x64/
+x86/
+build/
+bld/
+[Oo]bj/
+[Oo]ut/
+msbuild.log
+msbuild.err
+msbuild.wrn
+
+# Visual Studio 2015
+.vs/
+
+CapiSample/bin/Debug/netcoreapp2.2/*.txt
+CapiSample/bin/Debug/netcoreapp2.2/*.json
+!CapiSample/bin/Debug/netcoreapp2.2/appsettings.json
+CapiSample/bin/Debug/netcoreapp2.2/*.dll
+CapiSample/bin/Debug/netcoreapp2.2/*.pdb
+CapiSample/bin/Debug/netcoreapp2.2/Reports/
+
