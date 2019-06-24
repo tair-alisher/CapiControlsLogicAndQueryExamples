@@ -7,8 +7,10 @@ using System.IO;
 
 namespace CapiSample.Form3
 {
-    internal class SectionTwoSupplySourcesControl : BaseControl, IControl
+    internal class SectionTwoSupplySourcesControl : BaseControl<F3ProductAnswerData>, IControl
     {
+        private int supplySourcesAmount = 7;
+
         public SectionTwoSupplySourcesControl(string connection) : base(connection) { }
 
         private string query = @"select summary.summaryid as InterviewId
@@ -32,17 +34,17 @@ order by summary.summaryid";
 
         public void Execute()
         {
-            var file = CreateFile(@"Reports/SectionTwoSupplySourcesReport");
+            var file = CreateFile(@"Reports/FormThreeSectionTwoSupplySourcesReport");
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsBySupplySourcesFileName));
 
-            for (int i = 1; i <= 7; i++)
+            for (int i = 1; i <= supplySourcesAmount; i++)
             {
                 CheckAnswers(file, validProductList[0][i.ToString()], GetDataWithAnswer(i.ToString()));
                 Console.WriteLine($"answers with {i} checked.");
             }
         }
 
-        public void CheckAnswers(FileStream file, JToken validProductList, IEnumerable<AnswerData> answers)
+        public void CheckAnswers(FileStream file, JToken validProductList, IEnumerable<F3ProductAnswerData> answers)
         {
             var productCodes = new List<string>();
             foreach (var product in validProductList)
@@ -58,7 +60,7 @@ order by summary.summaryid";
 
         }
 
-        private IEnumerable<AnswerData> GetDataWithAnswer(string answer)
+        private IEnumerable<F3ProductAnswerData> GetDataWithAnswer(string answer)
         {
             return ExecuteQuery(string.Format(query, answer));
         }

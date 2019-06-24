@@ -7,10 +7,16 @@ using System.Linq;
 
 namespace CapiSample.CommonClasses
 {
-    internal abstract class BaseControl
+    internal abstract class BaseControl<T> where T : class
     {
+        // Products
         protected string ValidProductsFileName = @"Catalogs/productsByUnits.json";
         protected string ValidProductsBySupplySourcesFileName = @"Catalogs/productsBySupplySources.json";
+        // Items
+        protected string ValidItemsByUnitsFileName = @"Catalogs/ItemsByUnits.json";
+        protected string ValidItemsByMaterialsFileName = @"Catalogs/ItemsByMaterials.json";
+        protected string ValidItemsByUsersFileName = @"Catalogs/ItemsByUsers.json";
+
         protected readonly string Connection;
 
         public BaseControl(string connection)
@@ -26,12 +32,12 @@ namespace CapiSample.CommonClasses
             return file;
         }
 
-        protected virtual IEnumerable<AnswerData> ExecuteQuery(string query)
+        protected virtual IEnumerable<T> ExecuteQuery(string query)
         {
-            IEnumerable<AnswerData> answerData = Enumerable.Empty<AnswerData>();
+            IEnumerable<T> answerData = Enumerable.Empty<T>();
             using (var connection = new NpgsqlConnection(Connection))
             {
-                answerData = connection.Query<AnswerData>(query);
+                answerData = connection.Query<T>(query);
             }
 
             return answerData;

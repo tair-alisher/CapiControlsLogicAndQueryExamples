@@ -9,8 +9,5 @@
         public string Region { get; set; }
         public string QuestionCode { get; set; }
         public string UnitsAnswer { get; set; }
-        public string ProductCode { get; set; }
-
-        public string ProductSupplySource { get; set; }
     }
 }

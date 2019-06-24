@@ -7,13 +7,13 @@ using System.IO;
 
 namespace CapiSample.Form3
 {
-    internal class SectionOneUnitsControl : BaseControl, IControl
+    internal class SectionOneUnitsControl : BaseControl<F3ProductAnswerData>, IControl
     {
         public SectionOneUnitsControl(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = CreateFile(@"Reports/SectionOneUnitsReport");
+            var file = CreateFile(@"Reports/FormThreeSectionOneUnitsReport");
 
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsFileName));
 
@@ -29,10 +29,10 @@ namespace CapiSample.Form3
             Console.WriteLine("Done.\n");
         }
 
-        private void CheckAnswers(FileStream file, JToken validProductList, IEnumerable<AnswerData> answers)
+        private void CheckAnswers(FileStream file, JToken validProductsList, IEnumerable<F3ProductAnswerData> answers)
         {
             var productCodes = new List<string>();
-            foreach (var product in validProductList)
+            foreach (var product in validProductsList)
                 productCodes.Add((string)product["code"]);
 
             using (var writer = File.AppendText(file.Name))
@@ -44,7 +44,7 @@ namespace CapiSample.Form3
             file.Close();
         }
 
-        private IEnumerable<AnswerData> GetDataWithAnswerKgOrGr()
+        private IEnumerable<F3ProductAnswerData> GetDataWithAnswerKgOrGr()
         {
             string query = @"select summary.summaryid as InterviewId
 	,summary.key as InterviewKey
@@ -76,7 +76,7 @@ order by summary.summaryid";
             return ExecuteQuery(query);
         }
 
-        private IEnumerable<AnswerData> GetDataWithAnswerMlOrL()
+        private IEnumerable<F3ProductAnswerData> GetDataWithAnswerMlOrL()
         {
             string query = @"select summary.summaryid as InterviewId
 	,summary.key as InterviewKey
@@ -108,7 +108,7 @@ order by summary.summaryid";
             return ExecuteQuery(query);
         }
 
-        private IEnumerable<AnswerData> GetDataWithAnswerSht()
+        private IEnumerable<F3ProductAnswerData> GetDataWithAnswerSht()
         {
             string query = @"select summary.summaryid as InterviewId
 	,summary.key as InterviewKey

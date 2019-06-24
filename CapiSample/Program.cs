@@ -1,4 +1,5 @@
 ﻿using CapiSample.Form3;
+using CapiSample.Form5;
 using CapiSample.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -13,12 +14,14 @@ namespace CapiSample
             Directory.CreateDirectory("Reports");
 
             Console.WriteLine("Availabel controls:");
-            Console.WriteLine("1: sectionOneUnits");
-            Console.WriteLine("2: sectionTwoUnits");
-            Console.WriteLine("3: sectionTwoSupplySources");
-            Console.WriteLine();
+            Console.WriteLine("1: Форма 3. Раздел 1. Единицы измерения.");
+            Console.WriteLine("2: Форма 3. Разедл 2. Единицы измерения.");
+            Console.WriteLine("3: Форма 3. Раздел 2. Источники поступления.");
+            Console.WriteLine("4: Форма 5. Единицы измерения.");
+            Console.WriteLine("5: Форма 5. Материал.");
+            Console.WriteLine("6: Форма 5. Для кого куплено.");
 
-            Console.Write("Type control number: ");
+            Console.Write("\nType control number: ");
 
             var builder = new ConfigurationBuilder()
                 .SetBasePath(Directory.GetCurrentDirectory())
@@ -39,6 +42,15 @@ namespace CapiSample
                     break;
                 case "3":
                     Control = new SectionTwoSupplySourcesControl(connectionString);
+                    break;
+                case "4":
+                    Control = new FormFiveUnitsControl(connectionString);
+                    break;
+                case "5":
+                    Control = new FormFiveMaterialsControl(connectionString);
+                    break;
+                case "6":
+                    Control = new FormFiveItemUsersControl(connectionString);
                     break;
             }
 
