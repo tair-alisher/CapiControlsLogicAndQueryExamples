@@ -1,4 +1,6 @@
-﻿namespace CapiSample.CommonClasses
+﻿using CapiSample.CommonClasses;
+
+namespace CapiSample.Form6.DataObjects
 {
     internal class F6ServicesAnswerData : AnswerData
     {

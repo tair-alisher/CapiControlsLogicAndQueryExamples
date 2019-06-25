@@ -1,4 +1,5 @@
 ﻿using CapiSample.CommonClasses;
+using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.Collections.Generic;

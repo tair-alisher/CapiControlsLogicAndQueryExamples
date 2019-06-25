@@ -1,4 +1,5 @@
 ﻿using CapiSample.CommonClasses;
+using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -13,6 +14,7 @@ namespace CapiSample.Form6
         public void Execute()
         {
             var file = base.CreateFile(@"Reports/FormSixSectionTwoServices");
+            CheckAnswers(file, GetAnswersData());
 
             Console.WriteLine("Done.\n");
         }

@@ -1,4 +1,6 @@
-﻿namespace CapiSample.CommonClasses
+﻿using CapiSample.CommonClasses;
+
+namespace CapiSample.Form5.DataObjects
 {
     internal class F5ItemAnswerData : AnswerData
     {

@@ -1,4 +1,5 @@
 ﻿using CapiSample.CommonClasses;
+using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace CapiSample.Form6
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-    ,interview.asint as used,
+    ,interview.asint as WasUsed,
     (
         select count(s_interview.asdouble)
         from readside.interviews as s_interview
@@ -57,7 +58,7 @@ namespace CapiSample.Form6
             or s_qe.stata_export_caption like 'f6r2q11A_7')
             and (s_interview.asdouble is not null
             and s_interview.asdouble != 0)
-    ) as answers_amount
+    ) as NotNullAnswersAmount
 from readside.interviews as interview
     join readside.questionnaire_entities as qe
         on interview.entityid = qe.id

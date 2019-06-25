@@ -1,4 +1,6 @@
-﻿namespace CapiSample.CommonClasses
+﻿using CapiSample.CommonClasses;
+
+namespace CapiSample.Form3.DataObjects
 {
     internal class F3ProductAnswerData : AnswerData
     {
