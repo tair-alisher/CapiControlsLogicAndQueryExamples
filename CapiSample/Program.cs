@@ -1,5 +1,6 @@
 ﻿using CapiSample.Form3;
 using CapiSample.Form5;
+using CapiSample.Form6;
 using CapiSample.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -20,6 +21,10 @@ namespace CapiSample
             Console.WriteLine("4: Форма 5. Единицы измерения.");
             Console.WriteLine("5: Форма 5. Материал.");
             Console.WriteLine("6: Форма 5. Для кого куплено.");
+            Console.WriteLine("7: Форма 6. Раздел 2. Пункт 1. Расходы на топливо."); // всегда успешно. создан для примера запроса.
+            Console.WriteLine("8: Форма 6. Раздел 2. Пункт 1. Стоимость купленного топлива.");
+            Console.WriteLine("9: Форма 6. Раздел 2. Оплата за аренду жилья.");
+            Console.WriteLine("10: Форма 6. Раздел 2. Если есть льготы, указать процент.");
 
             Console.Write("\nType control number: ");
 
@@ -29,19 +34,19 @@ namespace CapiSample
             IConfiguration config = builder.Build();
             string connectionString = config.GetConnectionString("remote");
 
-            IControl Control = new SectionOneUnitsControl(connectionString);
+            IControl Control = new FormThreeSectionOneUnits(connectionString);
             string controlName = Console.ReadLine();
 
             switch (controlName)
             {
                 case "1":
-                    Control = new SectionOneUnitsControl(connectionString);
+                    Control = new FormThreeSectionOneUnits(connectionString);
                     break;
                 case "2":
-                    Control = new SectionTwoUnitsControl(connectionString);
+                    Control = new FormThreeSectionTwoUnits(connectionString);
                     break;
                 case "3":
-                    Control = new SectionTwoSupplySourcesControl(connectionString);
+                    Control = new FormThreeSectionTwoSupplySources(connectionString);
                     break;
                 case "4":
                     Control = new FormFiveUnitsControl(connectionString);
@@ -51,6 +56,18 @@ namespace CapiSample
                     break;
                 case "6":
                     Control = new FormFiveItemUsersControl(connectionString);
+                    break;
+                case "7":
+                    Control = new FormSixSectionTwoQuestionOneOccupancy(connectionString);
+                    break;
+                case "8":
+                    Control = new FormSixSectionTwoQuestionOneCost(connectionString);
+                    break;
+                case "9":
+                    Control = new FormSixSectionTwoRentPaymentQuestion(connectionString);
+                    break;
+                case "10":
+                    Control = new FormSixSectionTwoServices(connectionString);
                     break;
             }
 

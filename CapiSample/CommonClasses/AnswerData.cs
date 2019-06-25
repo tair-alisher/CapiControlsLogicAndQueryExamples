@@ -8,6 +8,5 @@
         public string InterviewDate { get; set; }
         public string Region { get; set; }
         public string QuestionCode { get; set; }
-        public string UnitsAnswer { get; set; }
     }
 }

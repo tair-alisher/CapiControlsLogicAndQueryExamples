@@ -25,7 +25,7 @@ namespace CapiSample.Form5
 
         public void Execute()
         {
-            var file = CreateFile(@"Reports/FormFiveMaterialsReport");
+            var file = base.CreateFile(@"Reports/FormFiveMaterialsReport");
             var validItemsList = JToken.Parse(File.ReadAllText(base.ValidItemsByMaterialsFileName));
 
             foreach (var material in MaterialsDir)
@@ -54,7 +54,7 @@ namespace CapiSample.Form5
 
         private IEnumerable<F5ItemAnswerData> GetDataWhereAnswerIs(string answer)
         {
-            return ExecuteQuery(string.Format(query, answer));
+            return base.ExecuteQuery(string.Format(query, answer));
         }
 
         private readonly string query = @"select summary.summaryid as InterviewId

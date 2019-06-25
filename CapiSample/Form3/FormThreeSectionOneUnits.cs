@@ -7,13 +7,13 @@ using System.IO;
 
 namespace CapiSample.Form3
 {
-    internal class SectionOneUnitsControl : BaseControl<F3ProductAnswerData>, IControl
+    internal class FormThreeSectionOneUnits : BaseControl<F3ProductAnswerData>, IControl
     {
-        public SectionOneUnitsControl(string connection) : base(connection) { }
+        public FormThreeSectionOneUnits(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = CreateFile(@"Reports/FormThreeSectionOneUnitsReport");
+            var file = base.CreateFile(@"Reports/FormThreeSectionOneUnitsReport");
 
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsFileName));
 
@@ -73,7 +73,7 @@ where q_entity.stata_export_caption = 'f3r1q6'
 	and (interview.asint = '1' or interview.asint = '2')
 order by summary.summaryid";
 
-            return ExecuteQuery(query);
+            return base.ExecuteQuery(query);
         }
 
         private IEnumerable<F3ProductAnswerData> GetDataWithAnswerMlOrL()
@@ -105,7 +105,7 @@ where q_entity.stata_export_caption = 'f3r1q6'
 	and (interview.asint = '3' or interview.asint = '5')
 order by summary.summaryid";
 
-            return ExecuteQuery(query);
+            return base.ExecuteQuery(query);
         }
 
         private IEnumerable<F3ProductAnswerData> GetDataWithAnswerSht()
@@ -137,7 +137,7 @@ where q_entity.stata_export_caption = 'f3r1q6'
 	and interview.asint = '4'
 order by summary.summaryid";
 
-            return ExecuteQuery(query);
+            return base.ExecuteQuery(query);
         }
     }
 }

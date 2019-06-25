@@ -7,13 +7,13 @@ using System.IO;
 
 namespace CapiSample.Form3
 {
-    internal class SectionTwoUnitsControl : BaseControl<F3ProductAnswerData>, IControl
+    internal class FormThreeSectionTwoUnits : BaseControl<F3ProductAnswerData>, IControl
     {
-        public SectionTwoUnitsControl(string connection) : base(connection) { }
+        public FormThreeSectionTwoUnits(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = CreateFile(@"Reports/FormThreeSectionTwoUnitsReport");
+            var file = base.CreateFile(@"Reports/FormThreeSectionTwoUnitsReport");
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsFileName));
 
             CheckAnswers(file, validProductList[0]["кг"], GetDataWithAnswerOneOrTwo());
@@ -64,7 +64,7 @@ where q_entity.stata_export_caption like 'f3r2q5b%'
     and (interview.asint = '1' or interview.asint = '2')
 order by summary.summaryid";
 
-            return ExecuteQuery(query);
+            return base.ExecuteQuery(query);
         }
 
         private IEnumerable<F3ProductAnswerData> GetDataWithAnswerThreeOrFive()
@@ -88,7 +88,7 @@ where q_entity.stata_export_caption like 'f3r2q5b%'
     and (interview.asint = '3' or interview.asint = '5')
 order by summary.summaryid";
 
-            return ExecuteQuery(query);
+            return base.ExecuteQuery(query);
         }
 
         private IEnumerable<F3ProductAnswerData> GetDataWithAnswerFour()
@@ -112,7 +112,7 @@ where q_entity.stata_export_caption like 'f3r2q5b%'
     and interview.asint = '4'
 order by summary.summaryid";
 
-            return ExecuteQuery(query);
+            return base.ExecuteQuery(query);
         }
     }
 }
