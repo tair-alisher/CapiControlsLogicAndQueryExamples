@@ -27,6 +27,8 @@ namespace CapiSample
                 Console.WriteLine("8: Форма 6. Раздел 2. Пункт 1. Стоимость купленного топлива.");
                 Console.WriteLine("9: Форма 6. Раздел 2. Оплата за аренду жилья.");
                 Console.WriteLine("10: Форма 6. Раздел 2. Если есть льготы, указать процент.");
+                Console.WriteLine("11. Форма 6. Раздел 3. Обращения за мед. помощью.");
+                Console.WriteLine("12. Форма 6. Раздел 3. Расходы на амбулаторное лечение.");
 
                 Console.Write("\nType control number: ");
 
@@ -71,8 +73,15 @@ namespace CapiSample
                     case "10":
                         Control = new FormSixSectionTwoServices(connectionString);
                         break;
+                    case "11":
+                        Control = new FormSixSectionThreeTreatment(connectionString);
+                        break;
+                    case "12":
+                        Control = new FormSixSectionThreeTreatmentCost(connectionString);
+                        break;
                 }
 
+                Console.WriteLine();
                 Control.Execute();
             }
         }
