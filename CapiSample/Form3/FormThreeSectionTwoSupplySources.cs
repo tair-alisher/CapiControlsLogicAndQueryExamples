@@ -16,14 +16,16 @@ namespace CapiSample.Form3
 
         public void Execute()
         {
-            var file = base.CreateFile(@"Reports/FormThreeSectionTwoSupplySourcesReport");
+            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsBySupplySourcesFileName));
 
             for (int i = 1; i <= supplySourcesAmount; i++)
             {
                 CheckAnswers(file, validProductList[0][i.ToString()], GetDataWithAnswer(i.ToString()));
-                Console.WriteLine($"answers with {i} checked.");
+                Console.WriteLine($"ответы с единицами измерения {i} проверены.");
             }
+
+            Console.WriteLine(base.SuccessMessage);
         }
 
         public void CheckAnswers(FileStream file, JToken validProductList, IEnumerable<F3ProductAnswerData> answers)

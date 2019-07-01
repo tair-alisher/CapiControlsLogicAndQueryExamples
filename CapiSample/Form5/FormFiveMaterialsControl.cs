@@ -26,16 +26,16 @@ namespace CapiSample.Form5
 
         public void Execute()
         {
-            var file = base.CreateFile(@"Reports/FormFiveMaterialsReport");
+            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
             var validItemsList = JToken.Parse(File.ReadAllText(base.ValidItemsByMaterialsFileName));
 
             foreach (var material in MaterialsDir)
             {
                 CheckAnswers(file, validItemsList[material.Value], GetDataWhereAnswerIs(material.Value));
-                Console.WriteLine($"Items with {material.Key} material checked");
+                Console.WriteLine($"Товары из материала {material.Key} проверены.");
             }
 
-            Console.WriteLine("Done.\n");
+            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file, JToken validItemsList, IEnumerable<F5ItemAnswerData> answers)

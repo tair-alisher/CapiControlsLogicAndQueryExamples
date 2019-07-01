@@ -2,7 +2,6 @@
 using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace CapiSample.Form6
@@ -13,14 +12,16 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile(@"Reports/FormSixSectionTwoServices");
-            CheckAnswers(file, GetAnswersData());
+            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
+            CheckAnswers(file);
 
-            Console.WriteLine("Done.\n");
+            Console.WriteLine("Коммунальные услуги (льготы). Проверено.");
+            Console.WriteLine(base.SuccessMessage);
         }
 
-        private void CheckAnswers(FileStream file, IEnumerable<F6ServicesAnswerData> answers)
+        private void CheckAnswers(FileStream file)
         {
+            var answers = base.ExecuteQuery(query);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
@@ -28,11 +29,6 @@ namespace CapiSample.Form6
                         writer.WriteLine($"interview: {answer.InterviewKey};");
             }
             file.Close();
-        }
-
-        private IEnumerable<F6ServicesAnswerData> GetAnswersData()
-        {
-            return base.ExecuteQuery(query);
         }
 
         // выбрать данные интервью,

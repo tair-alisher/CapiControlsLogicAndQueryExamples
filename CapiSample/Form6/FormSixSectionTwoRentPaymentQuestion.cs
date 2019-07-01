@@ -2,7 +2,6 @@
 using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.IO;
 
 namespace CapiSample.Form6
@@ -13,25 +12,23 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile(@"Reports/FormSixSectionTwoRentPaymentQuestion");
-            this.CheckAnswers(file, GetAnswersData());
+            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
+            CheckAnswers(file);
 
-            Console.WriteLine("Done.\n");
+            Console.WriteLine("Оплата за аренду жилья. Проверено.");
+            Console.WriteLine(base.SuccessMessage);
         }
 
-        private void CheckAnswers(FileStream file, IEnumerable<F6AnswerData> answers)
+        private void CheckAnswers(FileStream file)
         {
+            var answers = base.ExecuteQuery(query);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
                     if (answer.PaymentAmount <= 0)
-                        writer.WriteLine($"interview: {answer.InterviewKey};");
+                        writer.WriteLine($"interview: {answer.InterviewKey}; оплата за аренду жилья за один или более месяцев должна быть больше нуля.");
             }
-        }
-
-        private IEnumerable<F6AnswerData> GetAnswersData()
-        {
-            return base.ExecuteQuery(query);
+            file.Close();
         }
 
         private readonly string query = @"select summary.summaryid as InterviewId

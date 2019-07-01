@@ -14,19 +14,19 @@ namespace CapiSample.Form3
 
         public void Execute()
         {
-            var file = base.CreateFile(@"Reports/FormThreeSectionTwoUnitsReport");
+            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsFileName));
 
-            CheckAnswers(file, validProductList[0]["кг"], GetDataWithAnswerOneOrTwo());
-            Console.WriteLine("answers with kg or gr checked.");
+            CheckAnswers(file, validProductList[0]["кг"], base.ExecuteQuery(interviewDataWhereAnswerIsOneOrTwoQuery));
+            Console.WriteLine("Ответы с единицами измерения килограмы или граммы проверены.");
 
-            CheckAnswers(file, validProductList[0]["л"], GetDataWithAnswerThreeOrFive());
-            Console.WriteLine("answers with ml or l checked.");
+            CheckAnswers(file, validProductList[0]["л"], base.ExecuteQuery(interviewDataWhereAnswerIsThreeOrFiveQuery));
+            Console.WriteLine("Ответы с единицами измерения литры или миллилитры проверены.");
 
-            CheckAnswers(file, validProductList[0]["шт"], GetDataWithAnswerFour());
-            Console.WriteLine("answers with sht checked.");
+            CheckAnswers(file, validProductList[0]["шт"], base.ExecuteQuery(interviewDataWhereAnswerIsFourQuery));
+            Console.WriteLine("Ответы с единицами измерения штуки проверены.");
 
-            Console.WriteLine("Done.\n");
+            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file, JToken validProductList, IEnumerable<F3ProductAnswerData> answers)
@@ -44,9 +44,7 @@ namespace CapiSample.Form3
             file.Close();
         }
 
-        private IEnumerable<F3ProductAnswerData> GetDataWithAnswerOneOrTwo()
-        {
-            string query = @"select summary.summaryid as InterviewId
+        private readonly string interviewDataWhereAnswerIsOneOrTwoQuery = @"select summary.summaryid as InterviewId
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate
@@ -65,12 +63,7 @@ where q_entity.stata_export_caption like 'f3r2q5b%'
     and (interview.asint = '1' or interview.asint = '2')
 order by summary.summaryid";
 
-            return base.ExecuteQuery(query);
-        }
-
-        private IEnumerable<F3ProductAnswerData> GetDataWithAnswerThreeOrFive()
-        {
-            string query = @"select summary.summaryid as InterviewId
+        private readonly string interviewDataWhereAnswerIsThreeOrFiveQuery = @"select summary.summaryid as InterviewId
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate
@@ -89,12 +82,7 @@ where q_entity.stata_export_caption like 'f3r2q5b%'
     and (interview.asint = '3' or interview.asint = '5')
 order by summary.summaryid";
 
-            return base.ExecuteQuery(query);
-        }
-
-        private IEnumerable<F3ProductAnswerData> GetDataWithAnswerFour()
-        {
-            string query = @"select summary.summaryid as InterviewId
+        private readonly string interviewDataWhereAnswerIsFourQuery = @"select summary.summaryid as InterviewId
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate
@@ -112,8 +100,5 @@ from readside.interviews as interview
 where q_entity.stata_export_caption like 'f3r2q5b%'
     and interview.asint = '4'
 order by summary.summaryid";
-
-            return base.ExecuteQuery(query);
-        }
     }
 }

@@ -14,9 +14,10 @@ namespace CapiSample
         {
             while (true)
             {
+                bool done = false;
                 Directory.CreateDirectory("Reports");
 
-                Console.WriteLine("Availabel controls:");
+                Console.WriteLine("Доступные контроли:");
                 Console.WriteLine("1: Форма 3. Раздел 1. Единицы измерения.");
                 Console.WriteLine("2: Форма 3. Разедл 2. Единицы измерения.");
                 Console.WriteLine("3: Форма 3. Раздел 2. Источники поступления.");
@@ -29,8 +30,10 @@ namespace CapiSample
                 Console.WriteLine("10: Форма 6. Раздел 2. Если есть льготы, указать процент.");
                 Console.WriteLine("11. Форма 6. Раздел 3. Обращения за мед. помощью.");
                 Console.WriteLine("12. Форма 6. Раздел 3. Расходы на амбулаторное лечение.");
+                Console.WriteLine("13. Форма 6. Раздел 3. Госпитализация.");
+                Console.WriteLine("14. Форма 6. Раздел 3. Расходы на стационарное лечение.");
 
-                Console.Write("\nType control number: ");
+                Console.Write("\nВыберите номер контроля: ");
 
                 var builder = new ConfigurationBuilder()
                     .SetBasePath(Directory.GetCurrentDirectory())
@@ -38,7 +41,7 @@ namespace CapiSample
                 IConfiguration config = builder.Build();
                 string connectionString = config.GetConnectionString("remote");
 
-                IControl Control = new FormThreeSectionOneUnits(connectionString);
+                IControl Control = null;
                 string controlName = Console.ReadLine();
 
                 switch (controlName)
@@ -79,10 +82,23 @@ namespace CapiSample
                     case "12":
                         Control = new FormSixSectionThreeTreatmentCost(connectionString);
                         break;
+                    case "13":
+                        Control = new FormSixSectionThreeHospitalization(connectionString);
+                        break;
+                    case "14":
+                        Control = new FormSixSectionThreeHospitalizationCost(connectionString);
+                        break;
+                    default:
+                        done = true;
+                        break;
                 }
+
+                if (done)
+                    break;
 
                 Console.WriteLine();
                 Control.Execute();
+                Console.WriteLine();
             }
         }
     }

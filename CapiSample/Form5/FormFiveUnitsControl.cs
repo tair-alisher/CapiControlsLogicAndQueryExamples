@@ -27,16 +27,16 @@ namespace CapiSample.Form5
 
         public void Execute()
         {
-            var file = base.CreateFile(@"Reports/FormFiveUnitsReport");
+            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
             var validItemsList = JToken.Parse(File.ReadAllText(base.ValidItemsByUnitsFileName));
 
             foreach (var units in UnitsDir)
             {
                 CheckAnswers(file, validItemsList[units.Value], GetDataWhereAnswerIs(units.Value));
-                Console.WriteLine($"Items with {units.Key} units checked.");
+                Console.WriteLine($"Товары с единицами измерения { units.Key} проверены.");
             }
 
-            Console.WriteLine("Done.\n");
+            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file, JToken validItemsList, IEnumerable<F5ItemAnswerData> answers)
