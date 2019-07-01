@@ -61,26 +61,26 @@ namespace CapiSample.Form6
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-	,array_length(interview.asintarray, 1) as NumberOfQuestionsToAnswer
-	,(
-		select count(distinct(_interview.rostervector))
-		from readside.interviews as _interview
-			join readside.questionnaire_entities as _qe
-				on _interview.entityid = _qe.id
-			join readside.interviews_id as _interview_id
-				on _interview.interviewid = _interview_id.id
-		where _qe.stata_export_caption in ('f6r3q3A2', 'f6r3q3A3', 'f6r3q3A4')
-			and _interview_id.interviewid = interview_id.interviewid
-	) as NumberOfActuallyAnswered
+    ,array_length(interview.asintarray, 1) as NumberOfQuestionsToAnswer
+    ,(
+        select count(distinct(_interview.rostervector))
+        from readside.interviews as _interview
+            join readside.questionnaire_entities as _qe
+                on _interview.entityid = _qe.id
+            join readside.interviews_id as _interview_id
+                on _interview.interviewid = _interview_id.id
+        where _qe.stata_export_caption in ('f6r3q3A2', 'f6r3q3A3', 'f6r3q3A4')
+            and _interview_id.interviewid = interview_id.interviewid
+    ) as NumberOfActuallyAnswered
 from readside.interviews as interview
-	join readside.questionnaire_entities as qe
-		on interview.entityid = qe.id
-	join readside.interviews_id as interview_id
-		on interview.interviewid = interview_id.id
-	join readside.interviewsummaries as summary
-		on interview_id.interviewid = summary.interviewid
+    join readside.questionnaire_entities as qe
+        on interview.entityid = qe.id
+    join readside.interviews_id as interview_id
+        on interview.interviewid = interview_id.id
+    join readside.interviewsummaries as summary
+        on interview_id.interviewid = summary.interviewid
 where qe.stata_export_caption = 'f6r3q3'
-	and interview.asintarray is not null
+    and interview.asintarray is not null
 order by summary.interviewid";
 
         // суммирует расходы на амбулаторное лечение за все три месяца
@@ -95,44 +95,44 @@ order by summary.interviewid";
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-	,interview.rostervector as TreatmentType
-	,((coalesce(interview.asdouble, 0)
-	+ coalesce(
-		(
-			select _interview.asdouble
-			from readside.interviews as _interview
-				join readside.questionnaire_entities as _qe
-					on _interview.entityid = _qe.id
-				join readside.interviews_id as _interview_id
-					on _interview.interviewid = _interview_id.id
-			where _qe.stata_export_caption = 'f6r3q3A3'
-				and _qe.parentid = qe.parentid
-				and _interview.rostervector = interview.rostervector
-				and _interview.interviewid = interview.interviewid
-			limit 1
-		), 0)
-	+ coalesce(
-		(
-			select _interview.asdouble
-			from readside.interviews as _interview
-				join readside.questionnaire_entities as _qe
-					on _interview.entityid = _qe.id
-				join readside.interviews_id as _interview_id
-					on _interview.interviewid = _interview_id.id
-			where _qe.stata_export_caption = 'f6r3q3A4'
-				and _qe.parentid = qe.parentid
-				and _interview.rostervector = interview.rostervector
-				and _interview.interviewid = interview.interviewid
-			limit 1
-		), 0)
-  	) > 0) as IsTreatmentCostAnswered
+    ,interview.rostervector as TreatmentType
+    ,((coalesce(interview.asdouble, 0)
+    + coalesce(
+        (
+            select _interview.asdouble
+            from readside.interviews as _interview
+                join readside.questionnaire_entities as _qe
+                    on _interview.entityid = _qe.id
+                join readside.interviews_id as _interview_id
+                    on _interview.interviewid = _interview_id.id
+            where _qe.stata_export_caption = 'f6r3q3A3'
+                and _qe.parentid = qe.parentid
+                and _interview.rostervector = interview.rostervector
+                and _interview.interviewid = interview.interviewid
+            limit 1
+        ), 0)
+    + coalesce(
+        (
+            select _interview.asdouble
+            from readside.interviews as _interview
+                join readside.questionnaire_entities as _qe
+                    on _interview.entityid = _qe.id
+                join readside.interviews_id as _interview_id
+                    on _interview.interviewid = _interview_id.id
+            where _qe.stata_export_caption = 'f6r3q3A4'
+                and _qe.parentid = qe.parentid
+                and _interview.rostervector = interview.rostervector
+                and _interview.interviewid = interview.interviewid
+            limit 1
+        ), 0)
+      ) > 0) as IsTreatmentCostAnswered
 from readside.interviews as interview
-	join readside.questionnaire_entities as qe
-		on interview.entityid = qe.id
-	join readside.interviews_id as interview_id
-		on interview.interviewid = interview_id.id
-	join readside.interviewsummaries as summary
-		on interview_id.interviewid = summary.interviewid
+    join readside.questionnaire_entities as qe
+        on interview.entityid = qe.id
+    join readside.interviews_id as interview_id
+        on interview.interviewid = interview_id.id
+    join readside.interviewsummaries as summary
+        on interview_id.interviewid = summary.interviewid
 where qe.stata_export_caption = 'f6r3q3A2'
 order by summary.interviewid";
     }
