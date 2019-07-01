@@ -17,6 +17,8 @@ namespace CapiSample.CommonClasses
         protected string ValidItemsByMaterialsFileName = @"Catalogs/ItemsByMaterials.json";
         protected string ValidItemsByUsersFileName = @"Catalogs/ItemsByUsers.json";
 
+        protected string SuccessMessage = "Выполнено.";
+
         protected readonly string Connection;
 
         public BaseControl(string connection)

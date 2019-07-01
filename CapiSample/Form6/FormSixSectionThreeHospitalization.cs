@@ -7,39 +7,39 @@ using System.Linq;
 
 namespace CapiSample.Form6
 {
-    internal class FormSixSectionThreeTreatment : BaseControl<F6TreatmentAnswerData>, IControl
+    internal class FormSixSectionThreeHospitalization : BaseControl<F6TreatmentAnswerData>, IControl
     {
-        private readonly int maxAllowableNumberOfVisitsPerMonth = 5;
+        private readonly int maxAllowableNumberOfHospitalizationPerMonth = 1;
 
-        public FormSixSectionThreeTreatment(string connection) : base(connection) { }
+        public FormSixSectionThreeHospitalization(string connection) : base(connection) { }
 
         public void Execute()
         {
             var file = base.CreateFile($@"Reports/{this.GetType().Name}");
             CheckAnswers(file);
 
-            Console.WriteLine("Количество обращений к врачу за прошедшие три месяца проверено.");
+            Console.WriteLine("Количество госпитализаций за прошедшие три месяца проверено.");
             Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file)
         {
+            var answers = base.ExecuteQuery(query);
             using (var writer = File.AppendText(file.Name))
             {
-                var answers = base.ExecuteQuery(query);
                 foreach (var answer in answers)
                 {
-                    if (!answer.ThreeMonths.Any(visitsAmount => visitsAmount > 0))
-                        writer.WriteLine($"interview: {answer.InterviewKey}; должно быть указано количество обращений к врачу.");
-                    if (answer.ThreeMonths.Any(visitsAmount => visitsAmount > maxAllowableNumberOfVisitsPerMonth))
-                        writer.WriteLine($"interview: {answer.InterviewKey}; количество обращений не может быть больше {maxAllowableNumberOfVisitsPerMonth} раз за месяц.");
+                    if (!answer.ThreeMonths.Any(hospAmount => hospAmount > 0))
+                        writer.WriteLine($"interview: {answer.InterviewKey}; должно быть указано количество госпитализаций.");
+                    if (answer.ThreeMonths.Any(hospAmount => hospAmount > maxAllowableNumberOfHospitalizationPerMonth))
+                        writer.WriteLine($"interview: {answer.InterviewKey}; количество госпитализаций не может быть больше ${maxAllowableNumberOfHospitalizationPerMonth} раз за месяц.");
                 }
             }
             file.Close();
         }
 
-        // выборка количества обращений за мед помощью по месяцам (за прошедшие три месяца)
-        // в интервью, где на вопрос, были ли расходы на посещение поликлиник, отвечено да (1)
+        // выборка количества госпитализаций (за прошедшие три месяца)
+        // в интервью, где на вопрос, были ли кто госпитализирован за прошедшие 3 месяца, отвечено да (1)
         private readonly string query = @"select summary.summaryid as InterviewId
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
@@ -53,7 +53,7 @@ namespace CapiSample.Form6
 				on _interview.entityid = _qe.id
 			join readside.interviews_id as _interview_id
 				on _interview.interviewid = _interview_id.id
-		where _qe.stata_export_caption = 'f6r3q2A1'
+		where _qe.stata_export_caption = 'f6r3q5A1'
 			and _interview_id.interviewid = interview_id.interviewid
 			and _qe.parentid = qe.parentid
 	) as FirstMonth
@@ -64,7 +64,7 @@ namespace CapiSample.Form6
 				on _interview.entityid = _qe.id
 			join readside.interviews_id as _interview_id
 				on _interview.interviewid = _interview_id.id
-		where _qe.stata_export_caption = 'f6r3q2A2'
+		where _qe.stata_export_caption = 'f6r3q5A2'
 			and _interview_id.interviewid = interview_id.interviewid
 			and _qe.parentid = qe.parentid
 	) as SecondMonth
@@ -75,7 +75,7 @@ namespace CapiSample.Form6
 				on _interview.entityid = _qe.id
 			join readside.interviews_id as _interview_id
 				on _interview.interviewid = _interview_id.id
-		where _qe.stata_export_caption = 'f6r3q2A3'
+		where _qe.stata_export_caption = 'f6r3q5A3'
 			and _interview_id.interviewid = interview_id.interviewid
 			and _qe.parentid = qe.parentid
 	) as ThirdMonth
@@ -86,7 +86,7 @@ from readside.interviews as interview
 		on interview.interviewid = interview_id.id
 	join readside.interviewsummaries as summary
 		on interview_id.interviewid = summary.interviewid
-where qe.stata_export_caption = 'f6r3q1'
+where qe.stata_export_caption = 'f6r3q4'
 	and interview.asint = '1'
 order by summary.interviewid";
     }

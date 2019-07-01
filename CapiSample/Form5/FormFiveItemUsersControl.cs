@@ -24,16 +24,17 @@ namespace CapiSample.Form5
 
         public void Execute()
         {
-            var file = base.CreateFile(@"Reports/FormFiveItemUsersReport");
+            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
             var validItemsList = JToken.Parse(File.ReadAllText(base.ValidItemsByUsersFileName));
 
             foreach (var user in UsersDir)
             {
                 CheckAnswers(file, validItemsList[user.Value], GetDataWhereAnswerIs(user.Value));
-                Console.WriteLine($"Items with {user.Key} user is checked.");
+                Console.WriteLine($"Товары купленные для {user.Key} проверены.");
+                
             }
 
-            Console.WriteLine("Done.\n");
+            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file, JToken validItemsList, IEnumerable<F5ItemAnswerData> answers)
