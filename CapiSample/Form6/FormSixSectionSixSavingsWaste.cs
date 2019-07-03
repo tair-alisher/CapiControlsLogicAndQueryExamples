@@ -5,16 +5,16 @@ using System.IO;
 
 namespace CapiSample.Form6
 {
-    internal class FormSixSectionSixPropertyPurchase : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class FormSixSectionSixSavingsWaste : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionSixPropertyPurchase(string connection) : base(connection) { }
+        public FormSixSectionSixSavingsWaste(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}\{this.GetType().Name}");
+            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
             CheckAnswers(file);
 
-            Console.WriteLine("Покупка недвижимости. Проверено.");
+            Console.WriteLine("Трата себережений. Проверено.");
             Console.WriteLine(base.SuccessMessage);
         }
 
@@ -26,7 +26,7 @@ namespace CapiSample.Form6
                 foreach (var answer in answers)
                 {
                     if (!answer.ValidRow)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; должны быть указаны расходы при покупке недвижимости за один или более месяцев.");
+                        writer.WriteLine($"interview: {answer.InterviewKey}; должна быть указана сумма израсходованных сбережений.");
                 }
             }
             file.Close();
@@ -46,9 +46,7 @@ namespace CapiSample.Form6
 		 		on _i.entityid = _qe.id
 		 	join readside.interviews_id as _id
 		 		on _i.interviewid = _id.id
-		 where _qe.stata_export_caption = 'f6r6q2A3'
-		 	and _qe.parentid = qe.parentid
-		 	and _i.rostervector = i.rostervector
+		 where _qe.stata_export_caption = 'f6r6q4A2'
 		 	and _id.interviewid = i_id.interviewid
 		 limit 1
 	 ), 0)
@@ -59,9 +57,7 @@ namespace CapiSample.Form6
 				on _i.entityid = _qe.id
 			join readside.interviews_id as _id
 				on _i.interviewid = _id.id
-		 where _qe.stata_export_caption = 'f6r6q2A4'
-			and _qe.parentid = qe.parentid
-			and _i.rostervector = i.rostervector
+		 where _qe.stata_export_caption = 'f6r6q4A3'
 			and _id.interviewid = i_id.interviewid
 		 limit 1
 	), 0) > 0) as ValidRow
@@ -72,7 +68,7 @@ from readside.interviews as i
 		on i.interviewid = i_id.id
 	join readside.interviewsummaries as s
 		on i_id.interviewid = s.interviewid
-where qe.stata_export_caption = 'f6r6q2A2'
+where qe.stata_export_caption = 'f6r6q4A1'
 	and (
 		select _i.asint
 			from readside.interviews as _i
@@ -80,7 +76,7 @@ where qe.stata_export_caption = 'f6r6q2A2'
 					on _i.entityid = _qe.id
 				join readside.interviews_id as _id
 					on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q1'
+		where _qe.stata_export_caption = 'f6r6q3'
 			and _id.interviewid = i_id.interviewid
 		limit 1
 	) = 1

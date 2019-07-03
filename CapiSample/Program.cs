@@ -37,6 +37,7 @@ namespace CapiSample
                 Console.WriteLine("17. Форма 6. Раздел 5. Расходы на дошкольное образование.");
                 Console.WriteLine("18. Форма 6. Раздел 5. Расходы на образование.");
                 Console.WriteLine("19. Форма 6. Раздел 6. Покупка недвижимости.");
+                Console.WriteLine("20. Форма 6. Раздел 6. Трата сбережений");
 
                 Console.Write("\nВыберите номер контроля: ");
 
@@ -107,6 +108,9 @@ namespace CapiSample
                         break;
                     case "19":
                         Control = new FormSixSectionSixPropertyPurchase(connectionString);
+                        break;
+                    case "20":
+                        Control = new FormSixSectionSixSavingsWaste(connectionString);
                         break;
                     default:
                         done = true;
