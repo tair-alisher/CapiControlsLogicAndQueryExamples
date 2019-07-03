@@ -1,12 +1,11 @@
 ﻿using CapiSample.CommonClasses;
-using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.IO;
 
 namespace CapiSample.Form6
 {
-    internal class FormSixSectionFour : BaseControl<F6TransportAnswerData>, IControl
+    internal class FormSixSectionFour : BaseControl<AnswerDataWithValidRow>, IControl
     {
         public FormSixSectionFour(string connection) : base(connection) { }
 
