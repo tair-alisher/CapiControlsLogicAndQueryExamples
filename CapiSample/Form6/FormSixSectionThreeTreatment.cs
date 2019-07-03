@@ -9,13 +9,13 @@ namespace CapiSample.Form6
 {
     internal class FormSixSectionThreeTreatment : BaseControl<F6TreatmentAnswerData>, IControl
     {
-        private readonly int maxAllowableNumberOfVisitsPerMonth = 5;
+        private const int maxAllowableNumberOfVisitsPerMonth = 5;
 
         public FormSixSectionThreeTreatment(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
+            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
             CheckAnswers(file);
 
             Console.WriteLine("Количество обращений к врачу за прошедшие три месяца проверено.");

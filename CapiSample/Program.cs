@@ -34,6 +34,7 @@ namespace CapiSample
                 Console.WriteLine("14. Форма 6. Раздел 3. Расходы на стационарное лечение.");
                 Console.WriteLine("15. Форма 6. Раздел 3. Расходы на мед. принадлежности, лекарство.");
                 Console.WriteLine("16. Форма 6. Раздел 4. Расходы на транспорт.");
+                Console.WriteLine("17. Форма 6. Раздел 5. Расходы на дошкольное образование.");
 
                 Console.Write("\nВыберите номер контроля: ");
 
@@ -95,6 +96,9 @@ namespace CapiSample
                         break;
                     case "16":
                         Control = new FormSixSectionFour(connectionString);
+                        break;
+                    case "17":
+                        Control = new FormSixSectionFivePreSchoolEduCost(connectionString);
                         break;
                     default:
                         done = true;

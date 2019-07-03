@@ -10,13 +10,13 @@ namespace CapiSample.Form3
 {
     internal class FormThreeSectionTwoSupplySources : BaseControl<F3ProductAnswerData>, IControl
     {
-        private readonly int supplySourcesAmount = 7;
+        private const int supplySourcesAmount = 7;
 
         public FormThreeSectionTwoSupplySources(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
+            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsBySupplySourcesFileName));
 
             for (int i = 1; i <= supplySourcesAmount; i++)

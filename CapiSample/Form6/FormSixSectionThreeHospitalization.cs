@@ -9,13 +9,13 @@ namespace CapiSample.Form6
 {
     internal class FormSixSectionThreeHospitalization : BaseControl<F6TreatmentAnswerData>, IControl
     {
-        private readonly int maxAllowableNumberOfHospitalizationPerMonth = 1;
+        private const int maxAllowableNumberOfHospitalizationPerMonth = 1;
 
         public FormSixSectionThreeHospitalization(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
+            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
             CheckAnswers(file);
 
             Console.WriteLine("Количество госпитализаций за прошедшие три месяца проверено.");
