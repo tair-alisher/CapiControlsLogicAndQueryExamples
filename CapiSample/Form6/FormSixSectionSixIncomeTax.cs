@@ -5,14 +5,14 @@ using System.IO;
 
 namespace CapiSample.Form6
 {
-    internal class FormSixSectionSixPropertyTax : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class FormSixSectionSixIncomeTax : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionSixPropertyTax(string connection) : base(connection) { }
+        public FormSixSectionSixIncomeTax(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
-            Console.WriteLine("Уплата налога на недвижимость. Проверено.");
+            Console.WriteLine("Уплата подоходного налога. Проверено.");
 
             Console.WriteLine(base.SuccessMessage);
         }
@@ -25,7 +25,7 @@ namespace CapiSample.Form6
                 foreach (var answer in answers)
                 {
                     if (!answer.ValidRow)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; сумма, выплаченная на уплату налога на недвижимость, должна быть больше нуля.");
+                        writer.WriteLine($"interview: {answer.InterviewKey}; сумма, выплаченная на уплату подоходного налога, должна быть больше нуля.");
                 }
             }
             file.Close();
@@ -45,7 +45,7 @@ namespace CapiSample.Form6
                     on _i.entityid = _qe.id
                 join readside.interviews_id as _id
                     on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r6q15A1'
+            where _qe.stata_export_caption = 'f6r6q17A1'
                 and _id.interviewid = i_id.interviewid
             limit 1
         ), 0)
@@ -57,7 +57,7 @@ namespace CapiSample.Form6
                          on _i.entityid = _qe.id
                     join readside.interviews_id as _id
                          on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r6q15A2'
+            where _qe.stata_export_caption = 'f6r6q17A2'
                 and _id.interviewid = i_id.interviewid
             limit 1
         ), 0)
@@ -69,7 +69,7 @@ namespace CapiSample.Form6
                         on _i.entityid = _qe.id
                     join readside.interviews_id as _id
                         on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r6q15A3'
+            where _qe.stata_export_caption = 'f6r6q17A3'
                 and _id.interviewid = i_id.interviewid
             limit 1
         ), 0) > 0) as ValidRow
@@ -80,7 +80,7 @@ from readside.interviews as i
         on i.interviewid = i_id.id
     join readside.interviewsummaries as s
         on i_id.interviewid = s.interviewid
-where qe.stata_export_caption = 'f6r6q14'
+where qe.stata_export_caption = 'f6r6q16'
     and i.asint = 1
 order by s.interviewid";
     }

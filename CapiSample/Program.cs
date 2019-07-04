@@ -42,6 +42,7 @@ namespace CapiSample
                 Console.WriteLine("22. Форма 6. Раздел 6. Брали ли в долг или кредит.");
                 Console.WriteLine("23. Форма 6. Раздел 6. Возврат долга или кредита.");
                 Console.WriteLine("24. Форма 6. Раздел 6. Уплата налога на недвижимость.");
+                Console.WriteLine("25. Форма 6. Раздел 6. Уплата подоходного налога.");
 
                 Console.Write("\nВыберите номер контроля: ");
 
@@ -127,6 +128,9 @@ namespace CapiSample
                         break;
                     case "24":
                         Control = new FormSixSectionSixPropertyTax(connectionString);
+                        break;
+                    case "25":
+                        Control = new FormSixSectionSixIncomeTax(connectionString);
                         break;
                     default:
                         done = true;
