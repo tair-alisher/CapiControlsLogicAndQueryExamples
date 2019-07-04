@@ -74,47 +74,47 @@ namespace CapiSample.Form6
     ,s.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
     ,(coalesce(
-		(
-			select _i.asdouble
-			from readside.interviews as _i
-				join readside.questionnaire_entities as _qe
-					on _i.entityid = _qe.id
-				join readside.interviews_id as _id
-					on _i.interviewid = _id.id
-			where _qe.stata_export_caption = 'f6r6q8A1'
-				and _qe.parentid = qe.parentid
-				and _i.rostervector = i.rostervector
-				and _id.interviewid = i_id.interviewid
-			limit 1
-		), 0)
+        (
+            select _i.asdouble
+            from readside.interviews as _i
+                join readside.questionnaire_entities as _qe
+                    on _i.entityid = _qe.id
+                join readside.interviews_id as _id
+                    on _i.interviewid = _id.id
+            where _qe.stata_export_caption = 'f6r6q8A1'
+                and _qe.parentid = qe.parentid
+                and _i.rostervector = i.rostervector
+                and _id.interviewid = i_id.interviewid
+            limit 1
+        ), 0)
      + coalesce(
-		(
-			select _i.asdouble
-				from readside.interviews as _i
-					join readside.questionnaire_entities as _qe
-			 			on _i.entityid = _qe.id
-					join readside.interviews_id as _id
-			 			on _i.interviewid = _id.id
-			where _qe.stata_export_caption = 'f6r6q8A2'
-				and _qe.parentid = qe.parentid
-				and _i.rostervector = i.rostervector
-				and _id.interviewid = i_id.interviewid
-			limit 1
-		), 0)
+        (
+            select _i.asdouble
+                from readside.interviews as _i
+                    join readside.questionnaire_entities as _qe
+                         on _i.entityid = _qe.id
+                    join readside.interviews_id as _id
+                         on _i.interviewid = _id.id
+            where _qe.stata_export_caption = 'f6r6q8A2'
+                and _qe.parentid = qe.parentid
+                and _i.rostervector = i.rostervector
+                and _id.interviewid = i_id.interviewid
+            limit 1
+        ), 0)
     + coalesce(
-		(
-			select _i.asdouble
-				from readside.interviews as _i
-					join readside.questionnaire_entities as _qe
-						on _i.entityid = _qe.id
-					join readside.interviews_id as _id
-						on _i.interviewid = _id.id
-			where _qe.stata_export_caption = 'f6r6q8A3'
-				and _qe.parentid = qe.parentid
-				and _i.rostervector = i.rostervector
-				and _id.interviewid = i_id.interviewid
-			limit 1
-		), 0) > 0) as ValidRow
+        (
+            select _i.asdouble
+                from readside.interviews as _i
+                    join readside.questionnaire_entities as _qe
+                        on _i.entityid = _qe.id
+                    join readside.interviews_id as _id
+                        on _i.interviewid = _id.id
+            where _qe.stata_export_caption = 'f6r6q8A3'
+                and _qe.parentid = qe.parentid
+                and _i.rostervector = i.rostervector
+                and _id.interviewid = i_id.interviewid
+            limit 1
+        ), 0) > 0) as ValidRow
 from readside.interviews as i
     join readside.questionnaire_entities as qe
         on i.entityid = qe.id
@@ -132,17 +132,17 @@ order by s.interviewid";
     ,s.updatedate as InterviewDate
     ,s.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-	,((
-		select _i.asint
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q9'
-			and _i.interviewid = i.interviewid
-		limit 1
-	) > 0) as ValidRow
+    ,((
+        select _i.asint
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q9'
+            and _i.interviewid = i.interviewid
+        limit 1
+    ) > 0) as ValidRow
 from readside.interviews as i
     join readside.questionnaire_entities as qe
         on i.entityid = qe.id
@@ -160,17 +160,17 @@ order by s.interviewid";
     ,s.updatedate as InterviewDate
     ,s.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-	,((
-		select _i.asint
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q10'
-			and _i.interviewid = i.interviewid
-		limit 1
-	) > 0) as ValidRow
+    ,((
+        select _i.asint
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q10'
+            and _i.interviewid = i.interviewid
+        limit 1
+    ) > 0) as ValidRow
 from readside.interviews as i
     join readside.questionnaire_entities as qe
         on i.entityid = qe.id

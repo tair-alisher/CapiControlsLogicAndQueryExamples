@@ -142,144 +142,144 @@ order by s.interviewid";
         // сумма ответов в графах 4.1, 4.2, 4.3
         // должна быть равна значению, указаннмоу в графе 4, за соответствующий месяц
         private readonly string sumOfGraphsShouldBeEqualQuery = @"select (
-	(
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A2'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '41'
-		limit 1
-	)
-	+ (
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A2'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '42'
-		limit 1
-	)
-	+ (
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A2'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '43'
-		limit 1
-	) = i.asdouble) as ValidRow
+    (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A2'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '41'
+        limit 1
+    )
+    + (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A2'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '42'
+        limit 1
+    )
+    + (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A2'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '43'
+        limit 1
+    ) = i.asdouble) as ValidRow
 from readside.interviews as i
-	join readside.questionnaire_entities as qe
-		on i.entityid = qe.id
-	join readside.interviews_id as i_id
-		on i.interviewid = i_id.id
-	join readside.interviewsummaries as s
-		on i_id.interviewid = s.interviewid
+    join readside.questionnaire_entities as qe
+        on i.entityid = qe.id
+    join readside.interviews_id as i_id
+        on i.interviewid = i_id.id
+    join readside.interviewsummaries as s
+        on i_id.interviewid = s.interviewid
 where qe.stata_export_caption = 'f6r6q6A2'
-	and i.rostervector = '4'
+    and i.rostervector = '4'
 union
 select (
-	(
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A3'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '41'
-		limit 1
-	)
-	+ (
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A3'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '42'
-		limit 1
-	)
-	+ (
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A3'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '43'
-		limit 1
-	) = i.asdouble) as ValidRow
+    (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A3'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '41'
+        limit 1
+    )
+    + (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A3'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '42'
+        limit 1
+    )
+    + (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A3'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '43'
+        limit 1
+    ) = i.asdouble) as ValidRow
 from readside.interviews as i
-	join readside.questionnaire_entities as qe
-		on i.entityid = qe.id
-	join readside.interviews_id as i_id
-		on i.interviewid = i_id.id
-	join readside.interviewsummaries as s
-		on i_id.interviewid = s.interviewid
+    join readside.questionnaire_entities as qe
+        on i.entityid = qe.id
+    join readside.interviews_id as i_id
+        on i.interviewid = i_id.id
+    join readside.interviewsummaries as s
+        on i_id.interviewid = s.interviewid
 where qe.stata_export_caption = 'f6r6q6A3'
-	and i.rostervector = '4'
+    and i.rostervector = '4'
 union
 select (
-	(
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A4'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '41'
-		limit 1
-	)
-	+ (
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A4'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '42'
-		limit 1
-	)
-	+ (
-		select _i.asdouble
-		from readside.interviews as _i
-			join readside.questionnaire_entities as _qe
-				on _i.entityid = _qe.id
-			join readside.interviews_id as _id
-				on _i.interviewid = _id.id
-		where _qe.stata_export_caption = 'f6r6q6A4'
-			and _id.interviewid = i_id.interviewid
-			and _i.rostervector = '43'
-		limit 1
-	) = i.asdouble) as ValidRow
+    (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A4'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '41'
+        limit 1
+    )
+    + (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A4'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '42'
+        limit 1
+    )
+    + (
+        select _i.asdouble
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r6q6A4'
+            and _id.interviewid = i_id.interviewid
+            and _i.rostervector = '43'
+        limit 1
+    ) = i.asdouble) as ValidRow
 from readside.interviews as i
-	join readside.questionnaire_entities as qe
-		on i.entityid = qe.id
-	join readside.interviews_id as i_id
-		on i.interviewid = i_id.id
-	join readside.interviewsummaries as s
-		on i_id.interviewid = s.interviewid
+    join readside.questionnaire_entities as qe
+        on i.entityid = qe.id
+    join readside.interviews_id as i_id
+        on i.interviewid = i_id.id
+    join readside.interviewsummaries as s
+        on i_id.interviewid = s.interviewid
 where qe.stata_export_caption = 'f6r6q6A4'
-	and i.rostervector = '4'";
+    and i.rostervector = '4'";
     }
 }
