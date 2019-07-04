@@ -65,6 +65,7 @@ namespace CapiSample
                         Console.WriteLine("18. Форма 6. Раздел 6. Уплата налога на недвижимость.");
                         Console.WriteLine("19. Форма 6. Раздел 6. Уплата подоходного налога.");
                         Console.WriteLine("20. Форма 6. Раздел 6. Выплата членских взносов.");
+                        Console.WriteLine("21. Форма 6. Раздел 6. Взносы по страхованию.");
                         break;
                     default:
                         done = true;
@@ -158,6 +159,9 @@ namespace CapiSample
                         break;
                     case "620":
                         Control = new FormSixSectionSixMembershipFee(connectionString);
+                        break;
+                    case "621":
+                        Control = new FormSixSectionSixInsurance(connectionString);
                         break;
                     default:
                         done = true;
