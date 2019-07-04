@@ -39,6 +39,7 @@ namespace CapiSample
                 Console.WriteLine("19. Форма 6. Раздел 6. Покупка недвижимости.");
                 Console.WriteLine("20. Форма 6. Раздел 6. Трата сбережений.");
                 Console.WriteLine("21. Форма 6. Раздел 6. Вложение сбережений.");
+                Console.WriteLine("22. Форма 6. Раздел 6. Брали ли в долг или кредит.");
 
                 Console.Write("\nВыберите номер контроля: ");
 
@@ -115,6 +116,9 @@ namespace CapiSample
                         break;
                     case "21":
                         Control = new FormSixSectionSixSavingsContribution(connectionString);
+                        break;
+                    case "22":
+                        Control = new FormSixSectionSixLoanGetting(connectionString);
                         break;
                     default:
                         done = true;
