@@ -12,10 +12,9 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile($@"Reports/{this.GetType().Name}");
-            CheckAnswers(file);
-
+            CheckAnswers(base.CreateFile());
             Console.WriteLine("Стоимость купленного топлива. Проверено.");
+
             Console.WriteLine(base.SuccessMessage);
         }
 
@@ -37,34 +36,34 @@ namespace CapiSample.Form6
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-	,interview.asdouble as Amount,
-	(
-		select s_interview.asdouble
-		from readside.interviews as s_interview
-			join readside.questionnaire_entities as s_qe
-				on s_interview.entityid = s_qe.id
-			join readside.interviews_id as s_interview_id
-				on s_interview.interviewid = s_interview_id.id
-			join readside.interviewsummaries as s_summary
-				on s_interview_id.interviewid = s_summary.interviewid
-		where s_summary.interviewid = summary.interviewid
-			and s_qe.stata_export_caption like 'f6r2q11A_4'
-			and substring(s_qe.stata_export_caption, length(s_qe.stata_export_caption) - 1, 1) = substring(qe.stata_export_caption, length(qe.stata_export_caption) - 1, 1)
-			and s_qe.parentid = qe.parentid
-			and s_interview.rostervector = interview.rostervector
-		order by summary.interviewid
-		limit 1
-	) as Cost
+    ,interview.asdouble as Amount,
+    (
+        select s_interview.asdouble
+        from readside.interviews as s_interview
+            join readside.questionnaire_entities as s_qe
+                on s_interview.entityid = s_qe.id
+            join readside.interviews_id as s_interview_id
+                on s_interview.interviewid = s_interview_id.id
+            join readside.interviewsummaries as s_summary
+                on s_interview_id.interviewid = s_summary.interviewid
+        where s_summary.interviewid = summary.interviewid
+            and s_qe.stata_export_caption like 'f6r2q11A_4'
+            and substring(s_qe.stata_export_caption, length(s_qe.stata_export_caption) - 1, 1) = substring(qe.stata_export_caption, length(qe.stata_export_caption) - 1, 1)
+            and s_qe.parentid = qe.parentid
+            and s_interview.rostervector = interview.rostervector
+        order by summary.interviewid
+        limit 1
+    ) as Cost
 from readside.interviews as interview
-	join readside.questionnaire_entities as qe
-		on interview.entityid = qe.id
-	join readside.interviews_id as interview_id
-		on interview.interviewid = interview_id.id
-	join readside.interviewsummaries as summary
-		on interview_id.interviewid = summary.interviewid
+    join readside.questionnaire_entities as qe
+        on interview.entityid = qe.id
+    join readside.interviews_id as interview_id
+        on interview.interviewid = interview_id.id
+    join readside.interviewsummaries as summary
+        on interview_id.interviewid = summary.interviewid
 where qe.stata_export_caption like 'f6r2q11A_3'
-	and interview.asdouble is not null
-		and interview.asdouble != 0
+    and interview.asdouble is not null
+        and interview.asdouble != 0
 order by summary.interviewid";
     }
 }

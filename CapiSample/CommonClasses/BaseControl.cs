@@ -17,6 +17,7 @@ namespace CapiSample.CommonClasses
         protected string ValidItemsByMaterialsFileName = @"Catalogs/ItemsByMaterials.json";
         protected string ValidItemsByUsersFileName = @"Catalogs/ItemsByUsers.json";
 
+        protected string ReportsFolderName = "Reports";
         protected string SuccessMessage = "Выполнено.";
 
         protected readonly string Connection;
@@ -24,6 +25,12 @@ namespace CapiSample.CommonClasses
         public BaseControl(string connection)
         {
             Connection = connection;
+        }
+
+        protected FileStream CreateFile()
+        {
+            string name = $@"{ReportsFolderName}/{GetType().Name}";
+            return CreateFile(name);
         }
 
         protected FileStream CreateFile(string name)
