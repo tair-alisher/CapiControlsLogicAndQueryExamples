@@ -27,6 +27,12 @@ namespace CapiSample.CommonClasses
             Connection = connection;
         }
 
+        protected FileStream CreateFile()
+        {
+            string name = $@"{ReportsFolderName}/{GetType().Name}";
+            return CreateFile(name);
+        }
+
         protected FileStream CreateFile(string name)
         {
             var file = File.Create($"{name}-{DateTime.Now.ToString("yyyy.MM.dd-HH.mm")}.txt");

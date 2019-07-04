@@ -12,7 +12,7 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
+            var file = base.CreateFile();
 
             CheckAnsweredQuestionsData(file);
             Console.WriteLine("Соответствие выбранных типов купленных мед. принадлежностей и фактически отвеченных. Проверено.");
@@ -20,7 +20,6 @@ namespace CapiSample.Form6
             CheckMedicineCostData(file);
             Console.WriteLine("Расходы на покупку мед. принадлежностей, лекарств. Проверено.");
 
-            Console.WriteLine("");
             Console.WriteLine(base.SuccessMessage);
         }
 

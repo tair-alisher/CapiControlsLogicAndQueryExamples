@@ -15,10 +15,9 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
-            CheckAnswers(file);
-
+            CheckAnswers(base.CreateFile());
             Console.WriteLine("Количество обращений к врачу за прошедшие три месяца проверено.");
+
             Console.WriteLine(base.SuccessMessage);
         }
 

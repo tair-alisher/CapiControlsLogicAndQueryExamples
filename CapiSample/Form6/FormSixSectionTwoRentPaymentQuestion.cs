@@ -12,10 +12,9 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
-            CheckAnswers(file);
-
+            CheckAnswers(base.CreateFile());
             Console.WriteLine("Оплата за аренду жилья. Проверено.");
+
             Console.WriteLine(base.SuccessMessage);
         }
 

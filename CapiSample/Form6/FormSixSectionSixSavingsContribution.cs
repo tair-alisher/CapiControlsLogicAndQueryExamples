@@ -11,7 +11,7 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
+            var file = base.CreateFile();
 
             CheckTypesOfSavings(file);
             Console.WriteLine("Виды сбережений. Проверено.");

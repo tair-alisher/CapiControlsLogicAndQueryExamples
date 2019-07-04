@@ -24,7 +24,7 @@ namespace CapiSample.Form5
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
+            var file = base.CreateFile();
             var validItemsList = JToken.Parse(File.ReadAllText(base.ValidItemsByUsersFileName));
 
             foreach (var user in UsersDir)

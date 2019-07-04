@@ -11,7 +11,7 @@ namespace CapiSample.Form6
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
+            var file = base.CreateFile();
 
             CheckLoanAmount(file);
             Console.WriteLine("Сумма кредита или долга. Проверено.");

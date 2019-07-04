@@ -16,7 +16,7 @@ namespace CapiSample.Form3
 
         public void Execute()
         {
-            var file = base.CreateFile($@"{base.ReportsFolderName}/{this.GetType().Name}");
+            var file = base.CreateFile();
             var validProductList = JArray.Parse(File.ReadAllText(base.ValidProductsBySupplySourcesFileName));
 
             for (int i = 1; i <= supplySourcesAmount; i++)
