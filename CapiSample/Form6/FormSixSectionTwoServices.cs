@@ -14,8 +14,6 @@ namespace CapiSample.Form6
         {
             CheckAnswers(base.CreateFile());
             Console.WriteLine("Коммунальные услуги (льготы). Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file)

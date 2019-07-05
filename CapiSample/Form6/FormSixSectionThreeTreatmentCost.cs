@@ -19,8 +19,6 @@ namespace CapiSample.Form6
 
             CheckTreatmentCostData(file);
             Console.WriteLine("Расходы на амбулаторное лечение. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnsweredQuestionsData(FileStream file)

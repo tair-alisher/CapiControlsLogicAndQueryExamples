@@ -31,10 +31,7 @@ namespace CapiSample.Form5
             {
                 CheckAnswers(file, validItemsList[user.Value], GetDataWhereAnswerIs(user.Value));
                 Console.WriteLine($"Товары купленные для {user.Key} проверены.");
-                
             }
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file, JToken validItemsList, IEnumerable<F5ItemAnswerData> answers)

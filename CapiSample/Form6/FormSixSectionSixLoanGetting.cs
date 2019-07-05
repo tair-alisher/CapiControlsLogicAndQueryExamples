@@ -21,8 +21,6 @@ namespace CapiSample.Form6
 
             CheckLoanPurpose(file);
             Console.WriteLine("Цель получения кредита или долга. Проверено");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckLoanAmount(FileStream file)

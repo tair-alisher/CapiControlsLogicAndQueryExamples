@@ -13,8 +13,6 @@ namespace CapiSample.Form6
         {
             CheckAnswers(base.CreateFile());
             Console.WriteLine("Погашение кредита или долга. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file)

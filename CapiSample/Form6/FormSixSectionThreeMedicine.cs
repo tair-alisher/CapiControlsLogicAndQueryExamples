@@ -19,8 +19,6 @@ namespace CapiSample.Form6
 
             CheckMedicineCostData(file);
             Console.WriteLine("Расходы на покупку мед. принадлежностей, лекарств. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnsweredQuestionsData(FileStream file)

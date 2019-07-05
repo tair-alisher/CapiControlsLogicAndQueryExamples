@@ -13,8 +13,6 @@ namespace CapiSample.Form6
         {
             CheckAnswers(base.CreateFile());
             Console.WriteLine("Расходы на образование. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file)

@@ -19,8 +19,6 @@ namespace CapiSample.Form6
 
             CheckHospitalizationCostData(file);
             Console.WriteLine("Расходы на стационарное лечение. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnsweredQuestionsData(FileStream file)

@@ -18,8 +18,6 @@ namespace CapiSample.Form6
 
             CheckContributionAmount(file);
             Console.WriteLine("Количество вложенных сбережений. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckTypesOfSavings(FileStream file)

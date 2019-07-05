@@ -18,7 +18,6 @@ namespace CapiSample.CommonClasses
         protected string ValidItemsByUsersFileName = @"Catalogs/ItemsByUsers.json";
 
         protected string ReportsFolderName = "Reports";
-        protected string SuccessMessage = "Выполнено.";
 
         protected readonly string Connection;
 

@@ -24,8 +24,6 @@ namespace CapiSample.Form3
                 CheckAnswers(file, validProductList[0][i.ToString()], GetDataWithAnswer(i.ToString()));
                 Console.WriteLine($"ответы с единицами измерения {i} проверены.");
             }
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         public void CheckAnswers(FileStream file, JToken validProductList, IEnumerable<F3ProductAnswerData> answers)
