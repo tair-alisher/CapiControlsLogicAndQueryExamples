@@ -68,6 +68,7 @@ namespace CapiSample
                         Console.WriteLine("21. Форма 6. Раздел 6. Взносы по страхованию.");
                         Console.WriteLine("22. Форма 6. Раздел 6. Траты на техосмотр.");
                         Console.WriteLine("23. Форма 6. Раздел 6. Давали ли деньги в долг.");
+                        Console.WriteLine("24. Форма 6. Раздел 6. Выплата алиментов.");
                         break;
                     default:
                         done = true;
@@ -170,6 +171,9 @@ namespace CapiSample
                         break;
                     case "623":
                         Control = new FormSixSectionSixLend(connectionString);
+                        break;
+                    case "624":
+                        Control = new FormSixSectionSixAlimonyPayment(connectionString);
                         break;
                     default:
                         done = true;
