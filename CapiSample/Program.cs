@@ -72,6 +72,7 @@ namespace CapiSample
                         Console.WriteLine("26. Форма 6. Раздел 6. Расходы на покупку зерна.");
                         Console.WriteLine("27. Форма 6. Раздел 6. Прочие расходы.");
                         Console.WriteLine("28. Форма 6. Раздел 6. Прочие налоги.");
+                        Console.WriteLine("29. Форма 6. Раздел 7. Расходы на участок.");
                         break;
                     default:
                         done = true;
@@ -189,6 +190,9 @@ namespace CapiSample
                         break;
                     case "628":
                         Control = new FormSix.SectionSix.OtherExpenses(connectionString);
+                        break;
+                    case "629":
+                        Control = new FormSix.SectionSeven.PlotCosts(connectionString);
                         break;
                     default:
                         done = true;
