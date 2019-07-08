@@ -3,11 +3,11 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionFive
 {
-    internal class FormSixSectionFivePreSchoolEduCost : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class PreSchoolEduCost : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionFivePreSchoolEduCost(string connection) : base(connection) { }
+        public PreSchoolEduCost(string connection) : base(connection) { }
 
         public void Execute()
         {

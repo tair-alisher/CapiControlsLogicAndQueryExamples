@@ -4,11 +4,11 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionThree
 {
-    internal class FormSixSectionThreeMedicine : BaseControl<F6TreatmentCostAnswerData>, IControl
+    internal class Medicine : BaseControl<F6TreatmentCostAnswerData>, IControl
     {
-        public FormSixSectionThreeMedicine(string connection) : base(connection) { }
+        public Medicine(string connection) : base(connection) { }
 
         public void Execute()
         {

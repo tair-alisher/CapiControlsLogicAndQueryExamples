@@ -3,11 +3,11 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionSix
 {
-    internal class FormSixSectionSixLoanGetting : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class LoanGetting : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionSixLoanGetting(string connection) : base(connection) { }
+        public LoanGetting(string connection) : base(connection) { }
 
         public void Execute()
         {

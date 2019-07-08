@@ -1,6 +1,5 @@
 ﻿using CapiSample.Form3;
 using CapiSample.Form5;
-using CapiSample.Form6;
 using CapiSample.Interfaces;
 using Microsoft.Extensions.Configuration;
 using System;
@@ -71,6 +70,7 @@ namespace CapiSample
                         Console.WriteLine("24. Форма 6. Раздел 6. Выплата алиментов.");
                         Console.WriteLine("25. Форма 6. Раздел 6. Оказание помощи друзьям/родственникам.");
                         Console.WriteLine("26. Форма 6. Раздел 6. Расходы на покупку зерна.");
+                        Console.WriteLine("27. Форма 6. Раздел 6. Прочие расходы.");
                         break;
                     default:
                         done = true;
@@ -106,82 +106,85 @@ namespace CapiSample
                         Control = new FormFiveItemUsersControl(connectionString);
                         break;
                     case "61":
-                        Control = new FormSixSectionTwoQuestionOneOccupancy(connectionString);
+                        Control = new FormSix.SectionTwo.QuestionOneOccupancy(connectionString);
                         break;
                     case "62":
-                        Control = new FormSixSectionTwoQuestionOneCost(connectionString);
+                        Control = new FormSix.SectionTwo.QuestionOneCost(connectionString);
                         break;
                     case "63":
-                        Control = new FormSixSectionTwoRentPaymentQuestion(connectionString);
+                        Control = new FormSix.SectionTwo.RentPaymentQuestion(connectionString);
                         break;
                     case "64":
-                        Control = new FormSixSectionTwoServices(connectionString);
+                        Control = new FormSix.SectionTwo.Services(connectionString);
                         break;
                     case "65":
-                        Control = new FormSixSectionThreeTreatment(connectionString);
+                        Control = new FormSix.SectionThree.Treatment(connectionString);
                         break;
                     case "66":
-                        Control = new FormSixSectionThreeTreatmentCost(connectionString);
+                        Control = new FormSix.SectionThree.TreatmentCost(connectionString);
                         break;
                     case "67":
-                        Control = new FormSixSectionThreeHospitalization(connectionString);
+                        Control = new FormSix.SectionThree.Hospitalization(connectionString);
                         break;
                     case "68":
-                        Control = new FormSixSectionThreeHospitalizationCost(connectionString);
+                        Control = new FormSix.SectionThree.HospitalizationCost(connectionString);
                         break;
                     case "69":
-                        Control = new FormSixSectionThreeMedicine(connectionString);
+                        Control = new FormSix.SectionThree.Medicine(connectionString);
                         break;
                     case "610":
-                        Control = new FormSixSectionFour(connectionString);
+                        Control = new FormSix.SectionFour.TransportationCost(connectionString);
                         break;
                     case "611":
-                        Control = new FormSixSectionFivePreSchoolEduCost(connectionString);
+                        Control = new FormSix.SectionFive.PreSchoolEduCost(connectionString);
                         break;
                     case "612":
-                        Control = new FormSixSectionFiveEducation(connectionString);
+                        Control = new FormSix.SectionFive.Education(connectionString);
                         break;
                     case "613":
-                        Control = new FormSixSectionSixPropertyPurchase(connectionString);
+                        Control = new FormSix.SectionSix.PropertyPurchase(connectionString);
                         break;
                     case "614":
-                        Control = new FormSixSectionSixSavingsWaste(connectionString);
+                        Control = new FormSix.SectionSix.SavingsWaste(connectionString);
                         break;
                     case "615":
-                        Control = new FormSixSectionSixSavingsContribution(connectionString);
+                        Control = new FormSix.SectionSix.SavingsContribution(connectionString);
                         break;
                     case "616":
-                        Control = new FormSixSectionSixLoanGetting(connectionString);
+                        Control = new FormSix.SectionSix.LoanGetting(connectionString);
                         break;
                     case "617":
-                        Control = new FormSixSectionSixLoanRepayment(connectionString);
+                        Control = new FormSix.SectionSix.LoanRepayment(connectionString);
                         break;
                     case "618":
-                        Control = new FormSixSectionSixPropertyTax(connectionString);
+                        Control = new FormSix.SectionSix.PropertyTax(connectionString);
                         break;
                     case "619":
-                        Control = new FormSixSectionSixIncomeTax(connectionString);
+                        Control = new FormSix.SectionSix.IncomeTax(connectionString);
                         break;
                     case "620":
-                        Control = new FormSixSectionSixMembershipFee(connectionString);
+                        Control = new FormSix.SectionSix.MembershipFee(connectionString);
                         break;
                     case "621":
-                        Control = new FormSixSectionSixInsurance(connectionString);
+                        Control = new FormSix.SectionSix.Insurance(connectionString);
                         break;
                     case "622":
-                        Control = new FormSixSectionSixTechInspection(connectionString);
+                        Control = new FormSix.SectionSix.TechInspection(connectionString);
                         break;
                     case "623":
-                        Control = new FormSixSectionSixLend(connectionString);
+                        Control = new FormSix.SectionSix.Lend(connectionString);
                         break;
                     case "624":
-                        Control = new FormSixSectionSixAlimonyPayment(connectionString);
+                        Control = new FormSix.SectionSix.AlimonyPayment(connectionString);
                         break;
                     case "625":
-                        Control = new FormSixSectionSixSupport(connectionString);
+                        Control = new FormSix.SectionSix.FinancialSupport(connectionString);
                         break;
                     case "626":
-                        Control = new FormSixSectionSixGrainPurchase(connectionString);
+                        Control = new FormSix.SectionSix.GrainPurchase(connectionString);
+                        break;
+                    case "627":
+                        Control = new FormSix.SectionSix.OtherExpenses(connectionString);
                         break;
                     default:
                         done = true;

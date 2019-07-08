@@ -3,11 +3,11 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionSix
 {
-    internal class FormSixSectionSixTechInspection : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class TechInspection : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionSixTechInspection(string connection) : base(connection) { }
+        public TechInspection(string connection) : base(connection) { }
 
         public void Execute()
         {
@@ -43,7 +43,7 @@ namespace CapiSample.Form6
                     on _i.entityid = _qe.id
                 join readside.interviews_id as _id
                     on _i.interviewid = _id.id
-            where _qe.stata_export_ caption = 'f6r6q23A1'
+            where _qe.stata_export_caption = 'f6r6q23A1'
                 and _id.interviewid = i_id.interviewid
             limit 1
         ), 0)
