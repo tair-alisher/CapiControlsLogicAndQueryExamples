@@ -70,6 +70,7 @@ namespace CapiSample
                         Console.WriteLine("23. Форма 6. Раздел 6. Давали ли деньги в долг.");
                         Console.WriteLine("24. Форма 6. Раздел 6. Выплата алиментов.");
                         Console.WriteLine("25. Форма 6. Раздел 6. Оказание помощи друзьям/родственникам.");
+                        Console.WriteLine("26. Форма 6. Раздел 6. Расходы на покупку зерна.");
                         break;
                     default:
                         done = true;
@@ -178,6 +179,9 @@ namespace CapiSample
                         break;
                     case "625":
                         Control = new FormSixSectionSixSupport(connectionString);
+                        break;
+                    case "626":
+                        Control = new FormSixSectionSixGrainPurchase(connectionString);
                         break;
                     default:
                         done = true;
