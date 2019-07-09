@@ -35,8 +35,6 @@ namespace CapiSample.Form5
                 CheckAnswers(file, validItemsList[units.Value], GetDataWhereAnswerIs(units.Value));
                 Console.WriteLine($"Товары с единицами измерения { units.Key} проверены.");
             }
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file, JToken validItemsList, IEnumerable<F5ItemAnswerData> answers)

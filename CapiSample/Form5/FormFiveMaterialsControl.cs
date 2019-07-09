@@ -34,8 +34,6 @@ namespace CapiSample.Form5
                 CheckAnswers(file, validItemsList[material.Value], GetDataWhereAnswerIs(material.Value));
                 Console.WriteLine($"Товары из материала {material.Key} проверены.");
             }
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file, JToken validItemsList, IEnumerable<F5ItemAnswerData> answers)

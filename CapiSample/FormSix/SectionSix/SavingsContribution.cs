@@ -3,11 +3,11 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionSix
 {
-    internal class FormSixSectionSixSavingsContribution : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class SavingsContribution : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionSixSavingsContribution(string connection) : base(connection) { }
+        public SavingsContribution(string connection) : base(connection) { }
 
         public void Execute()
         {
@@ -18,8 +18,6 @@ namespace CapiSample.Form6
 
             CheckContributionAmount(file);
             Console.WriteLine("Количество вложенных сбережений. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckTypesOfSavings(FileStream file)

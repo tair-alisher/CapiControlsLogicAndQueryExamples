@@ -4,18 +4,16 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionTwo
 {
-    internal class FormSixSectionTwoServices : BaseControl<F6ServicesAnswerData>, IControl
+    internal class Services : BaseControl<F6ServicesAnswerData>, IControl
     {
-        public FormSixSectionTwoServices(string connection) : base(connection) { }
+        public Services(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
             Console.WriteLine("Коммунальные услуги (льготы). Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file)

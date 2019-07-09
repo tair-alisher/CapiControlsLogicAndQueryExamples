@@ -4,18 +4,16 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionTwo
 {
-    internal class FormSixSectionTwoRentPaymentQuestion : BaseControl<F6AnswerData>, IControl
+    internal class QuestionOneOccupancy : BaseControl<F6AnswerData>, IControl
     {
-        public FormSixSectionTwoRentPaymentQuestion(string connection) : base(connection) { }
+        public QuestionOneOccupancy(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
-            Console.WriteLine("Оплата за аренду жилья. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
+            Console.WriteLine("Расходы на приобретение топлива. Проверено.");
         }
 
         private void CheckAnswers(FileStream file)
@@ -24,8 +22,8 @@ namespace CapiSample.Form6
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
-                    if (answer.PaymentAmount <= 0)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; оплата за аренду жилья за один или более месяцев должна быть больше нуля.");
+                    if (int.Parse(answer.NotNullAnswersAmount) <= 0)
+                        writer.WriteLine($"interview: {answer.InterviewKey};");
             }
             file.Close();
         }
@@ -36,7 +34,8 @@ namespace CapiSample.Form6
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-    ,(
+    ,interview.asint as WasUsed,
+    (
         select count(s_interview.asdouble)
         from readside.interviews as s_interview
             join readside.questionnaire_entities as s_qe
@@ -45,10 +44,14 @@ namespace CapiSample.Form6
                 on s_interview.interviewid = s_interview_id.id
             join readside.interviewsummaries as s_summary
                 on s_interview_id.interviewid = s_summary.interviewid
-        where s_qe.stata_export_caption in ('f6r2q11A1', 'f6r2q11A2', 'f6r2q11A3')
-            and s_summary.interviewid = summary.interviewid
-            and s_interview.asdouble is not null and s_interview.asdouble != 0 limit 1
-    ) PaymentAmount
+        where s_summary.interviewid = summary.interviewid
+            and(s_qe.stata_export_caption like 'f6r2q11A_3'
+            or s_qe.stata_export_caption like 'f6r2q11A_5'
+            or s_qe.stata_export_caption like 'f6r2q11A_6'
+            or s_qe.stata_export_caption like 'f6r2q11A_7')
+            and (s_interview.asdouble is not null
+            and s_interview.asdouble != 0)
+    ) as NotNullAnswersAmount
 from readside.interviews as interview
     join readside.questionnaire_entities as qe
         on interview.entityid = qe.id
@@ -56,8 +59,7 @@ from readside.interviews as interview
         on interview.interviewid = interview_id.id
     join readside.interviewsummaries as summary
         on interview_id.interviewid = summary.interviewid
-where qe.stata_export_caption like 'f6r2q10'
-    and interview.asint = 2
-order by summary.interviewid";
+where qe.stata_export_caption = 'f6r2q1'
+    and interview.asint = 1";
     }
 }

@@ -4,11 +4,11 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionThree
 {
-    internal class FormSixSectionThreeHospitalizationCost : BaseControl<F6TreatmentCostAnswerData>, IControl
+    internal class HospitalizationCost : BaseControl<F6TreatmentCostAnswerData>, IControl
     {
-        public FormSixSectionThreeHospitalizationCost(string connection) : base(connection) { }
+        public HospitalizationCost(string connection) : base(connection) { }
 
         public void Execute()
         {
@@ -19,8 +19,6 @@ namespace CapiSample.Form6
 
             CheckHospitalizationCostData(file);
             Console.WriteLine("Расходы на стационарное лечение. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnsweredQuestionsData(FileStream file)

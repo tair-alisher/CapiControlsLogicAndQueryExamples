@@ -3,35 +3,33 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionSix
 {
-    internal class FormSixSectionSixPropertyTax : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class FinancialSupport : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionSixPropertyTax(string connection) : base(connection) { }
+        public FinancialSupport(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
-            Console.WriteLine("Уплата налога на недвижимость. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
+            Console.WriteLine("Оказание помощи. Проверено.");
         }
 
         private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(taxAmountMustBeGreaterThanZeroQuery);
+            var answers = base.ExecuteQuery(supportAmountMustBeGreaterThanZeroQuery);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
                 {
                     if (!answer.ValidRow)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; сумма, выплаченная на уплату налога на недвижимость, должна быть больше нуля.");
+                        writer.WriteLine($"interview: {answer.InterviewKey}; необходимо указать сумму поддержки.");
                 }
             }
             file.Close();
         }
 
-        private readonly string taxAmountMustBeGreaterThanZeroQuery = @"select s.summaryid as InterviewId
+        private readonly string supportAmountMustBeGreaterThanZeroQuery = @"select s.summaryid as InterviewId
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate
@@ -45,7 +43,7 @@ namespace CapiSample.Form6
                     on _i.entityid = _qe.id
                 join readside.interviews_id as _id
                     on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r6q15A1'
+            where _qe.stata_export_caption = 'f6r6q29A1'
                 and _id.interviewid = i_id.interviewid
             limit 1
         ), 0)
@@ -57,7 +55,7 @@ namespace CapiSample.Form6
                          on _i.entityid = _qe.id
                     join readside.interviews_id as _id
                          on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r6q15A2'
+            where _qe.stata_export_caption = 'f6r6q29A2'
                 and _id.interviewid = i_id.interviewid
             limit 1
         ), 0)
@@ -69,7 +67,7 @@ namespace CapiSample.Form6
                         on _i.entityid = _qe.id
                     join readside.interviews_id as _id
                         on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r6q15A3'
+            where _qe.stata_export_caption = 'f6r6q29A3'
                 and _id.interviewid = i_id.interviewid
             limit 1
         ), 0) > 0) as ValidRow
@@ -80,7 +78,7 @@ from readside.interviews as i
         on i.interviewid = i_id.id
     join readside.interviewsummaries as s
         on i_id.interviewid = s.interviewid
-where qe.stata_export_caption = 'f6r6q14'
+where qe.stata_export_caption = 'f6r6q28'
     and i.asint = 1
 order by s.interviewid";
     }

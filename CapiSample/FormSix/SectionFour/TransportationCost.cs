@@ -3,18 +3,16 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionFour
 {
-    internal class FormSixSectionFour : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class TransportationCost : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionFour(string connection) : base(connection) { }
+        public TransportationCost(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
             Console.WriteLine("Расходы на транспорт. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file)

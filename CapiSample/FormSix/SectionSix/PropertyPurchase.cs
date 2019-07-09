@@ -3,23 +3,21 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.Form6
+namespace CapiSample.FormSix.SectionSix
 {
-    internal class FormSixSectionSixPropertyPurchase : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class PropertyPurchase : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public FormSixSectionSixPropertyPurchase(string connection) : base(connection) { }
+        public PropertyPurchase(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
             Console.WriteLine("Покупка недвижимости. Проверено.");
-
-            Console.WriteLine(base.SuccessMessage);
         }
 
         private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(query);
+            var answers = base.ExecuteQuery(purchaseCostMustBeGreaterThanZeroQuery);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
@@ -31,7 +29,7 @@ namespace CapiSample.Form6
             file.Close();
         }
 
-        private readonly string query = @"select s.summaryid as InterviewId
+        private readonly string purchaseCostMustBeGreaterThanZeroQuery = @"select s.summaryid as InterviewId
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate
