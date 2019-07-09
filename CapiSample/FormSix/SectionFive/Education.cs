@@ -17,7 +17,7 @@ namespace CapiSample.FormSix.SectionFive
 
         private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(query);
+            var answers = base.ExecuteQuery(educationExpensesMustGreaterThanZeroQuery);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
@@ -29,7 +29,7 @@ namespace CapiSample.FormSix.SectionFive
             file.Close();
         }
 
-        private readonly string query = @"select summary.summaryid as InterviewId
+        private readonly string educationExpensesMustGreaterThanZeroQuery = @"select summary.summaryid as InterviewId
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate

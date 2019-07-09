@@ -17,7 +17,7 @@ namespace CapiSample.FormSix.SectionFour
 
         private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(query);
+            var answers = base.ExecuteQuery(transportationCostsMustBeGreaterThanZeroQuery);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
@@ -36,7 +36,7 @@ namespace CapiSample.FormSix.SectionFour
         // 1 - общественный городской и пригородный
         // 2 - междугородний (международный)
         // 9 - нет расходов
-        private readonly string query = @"select summary.summaryid as InterviewId
+        private readonly string transportationCostsMustBeGreaterThanZeroQuery = @"select summary.summaryid as InterviewId
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate

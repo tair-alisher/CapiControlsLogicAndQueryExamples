@@ -23,7 +23,7 @@ namespace CapiSample.FormSix.SectionTwo
             {
                 foreach (var answer in answers)
                     if (answer.Cost == null || answer.Cost == 0)
-                        writer.WriteLine($"interview: {answer.InterviewKey};");
+                        writer.WriteLine($"interview: {answer.InterviewKey}; должна быть указана стоимость купленного топлива.");
             }
             file.Close();
         }
