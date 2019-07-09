@@ -3,7 +3,7 @@ using CapiSample.Interfaces;
 using System;
 using System.IO;
 
-namespace CapiSample.FormSix
+namespace CapiSample.FormSix.SectionSix
 {
     internal class OtherTaxes : BaseControl<AnswerDataWithValidRow>, IControl
     {
