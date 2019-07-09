@@ -118,6 +118,9 @@ namespace CapiSample.Executors.FormSix
                     case "32":
                         control = new Controls.SectionSeven.HarvestProcessing(_connection);
                         break;
+                    case "33":
+                        control = new Controls.SectionSeven.ProductsSale(_connection);
+                        break;
                     default:
                         control = new Controls.SectionTwo.QuestionOneOccupancy(_connection);
                         break;
@@ -159,8 +162,9 @@ namespace CapiSample.Executors.FormSix
             Console.WriteLine("28. Форма 6. Раздел 6. Прочие налоги.");
             Console.WriteLine("29. Форма 6. Раздел 7. Расходы на участок.");
             Console.WriteLine("30. Форма 6. Раздел 7. Сбор урожая.");
-            Console.WriteLine("31. Форма 6. Раздел 7. Продажа продукции.");
+            Console.WriteLine("31. Форма 6. Раздел 7. Продажа урожая.");
             Console.WriteLine("32. Форма 6. Раздел 7. Производство продукции.");
+            Console.WriteLine("33. Форма 6. Раздел 7. Продажа продукции.");
         }
     }
 }
