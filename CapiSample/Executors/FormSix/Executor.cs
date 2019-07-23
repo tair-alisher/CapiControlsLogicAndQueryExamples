@@ -127,6 +127,12 @@ namespace CapiSample.Executors.FormSix
                     case "35":
                         control = new Controls.SectionSeven.ObtainedThroughGatheringAndHuntingProductsSale(_connection);
                         break;
+                    case "36":
+                        control = new Controls.SectionSeven.LivestockAtTheBeginning(_connection);
+                        break;
+                    case "37":
+                        control = new Controls.SectionSeven.LivestockPurchase(_connection);
+                        break;
                     default:
                         control = new Controls.SectionTwo.QuestionOneOccupancy(_connection);
                         break;
@@ -173,6 +179,8 @@ namespace CapiSample.Executors.FormSix
             Console.WriteLine("33. Форма 6. Раздел 7. Продажа продукции.");
             Console.WriteLine("34. Форма 6. Раздел 7. Сбор продуктов/охота/рыбная ловля.");
             Console.WriteLine("35. Форма 6. Раздел 7. Продажа продуктов полученных посредством сбора, охоты, рыбной ловли.");
+            Console.WriteLine("36. Форма 6. Раздел 7. Наличие скота на начало года.");
+            Console.WriteLine("37. Форма 6. Раздел 7. Покупка скота.");
         }
     }
 }
