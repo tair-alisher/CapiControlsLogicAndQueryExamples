@@ -5,31 +5,31 @@ using System.IO;
 
 namespace CapiSample.FormSix.SectionSeven
 {
-    internal class LivestockPurchase : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class LivestockSale : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public LivestockPurchase(string connection) : base(connection) { }
+        public LivestockSale(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
-            Console.WriteLine("Покупка скота. Проверено.");
+            Console.WriteLine("Продажа скота. Проверено.");
         }
 
-        private void CheckAnswers(FileStream file)
+        public void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(livestockPurchaseCostMustBeGreaterThanThousandQuery);
+            var answers = base.ExecuteQuery(livestockSaleValueMustBeGreaterThanThousandQuery);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var answer in answers)
                 {
                     if (!answer.ValidRow)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; стоимость, при покупке скота, за соответствующий месяц, должна быть больше тысячи.");
+                        writer.WriteLine($"interview: {answer.InterviewKey}; стоимость продажи скота за соответствующий месяц должна быть больше тысячи сомов.");
                 }
             }
             file.Close();
         }
 
-        private readonly string livestockPurchaseCostMustBeGreaterThanThousandQuery = @"select s.summaryid as InterviewId
+        private readonly string livestockSaleValueMustBeGreaterThanThousandQuery = @"select s.summaryid as InterviewId
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate
@@ -43,7 +43,7 @@ namespace CapiSample.FormSix.SectionSeven
             join readside.interviews_id as _id
                 on _i.interviewid = _id.id
         where _id.interviewid = i_id.interviewid
-            and _qe.stata_export_caption like 'f6r7q13A6_'
+            and _qe.stata_export_caption like 'f6r7q13A13_'
             and substring(_qe.stata_export_caption, length(_qe.stata_export_caption), 1) = substring(qe.stata_export_caption, length(qe.stata_export_caption), 1)
             and _qe.parentid = qe.parentid
             and _i.rostervector = i.rostervector
@@ -56,7 +56,7 @@ from readside.interviews as i
         on i.interviewid = i_id.id
     join readside.interviewsummaries as s
         on i_id.interviewid = s.interviewid
-where qe.stata_export_caption in ('f6r7c13A151', 'f6r7q13A52', 'f6r7q13A53')
+where qe.stata_export_caption in ('f6r7q13A121', 'f6r7q13A122', 'f6r7q13A123')
     and i.asdouble > 0
 order by s.interviewid";
     }
