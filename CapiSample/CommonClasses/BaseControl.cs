@@ -40,15 +40,26 @@ namespace CapiSample.CommonClasses
             return file;
         }
 
-        protected virtual IEnumerable<T> ExecuteQuery(string query)
+        protected IEnumerable<T> ExecuteQuery(string query)
         {
-            IEnumerable<T> answerData = Enumerable.Empty<T>();
+            var answerData = Enumerable.Empty<T>();
             using (var connection = new NpgsqlConnection(Connection))
             {
                 answerData = connection.Query<T>(query);
             }
 
             return answerData;
+        }
+
+        protected void WriteError(StreamWriter writer, AnswerData wrongAnswer)
+        {
+            writer.WriteLine($"Номер интервью: {wrongAnswer.InterviewKey};");
+            writer.WriteLine($"Форма: {wrongAnswer.Form}");
+            writer.WriteLine($"Раздел: {wrongAnswer.Section}");
+            writer.WriteLine($"Вопрос: {wrongAnswer.QuestionNumber}");
+            writer.WriteLine($"Вопрос: {wrongAnswer.QuestionText}");
+            writer.WriteLine($"Ошибка: {wrongAnswer.InfoMessage}");
+            writer.WriteLine();
         }
     }
 }

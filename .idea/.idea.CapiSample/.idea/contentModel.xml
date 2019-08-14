@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\atairakhunov\.Rider2019.1\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\atairakhunov\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_CapiSample.1234369261.00" t="ExcludeRecursive" />
+    <e p="D:\Code\capi_projects\CapiSample" t="IncludeFlat">
+      <e p="CapiSample" t="IncludeRecursive">
+        <e p="bin" t="ExcludeRecursive" />
+        <e p="CapiSample.csproj" t="IncludeRecursive" />
+        <e p="CommonClasses" t="Include">
+          <e p="AnswerData.cs" t="Include" />
+          <e p="AnswerDataWithValidRow.cs" t="Include" />
+          <e p="BaseControl.cs" t="Include" />
+        </e>
+        <e p="Executors" t="Include">
+          <e p="FormFive" t="Include">
+            <e p="Executor.cs" t="Include" />
+          </e>
+          <e p="FormSix" t="Include">
+            <e p="Executor.cs" t="Include" />
+          </e>
+          <e p="FormThree" t="Include">
+            <e p="Executor.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Form3" t="Include">
+          <e p="DataObjects" t="Include">
+            <e p="F3ProductAnswerData.cs" t="Include" />
+          </e>
+          <e p="FormThreeSectionOneUnits.cs" t="Include" />
+          <e p="FormThreeSectionTwoSupplySources.cs" t="Include" />
+          <e p="FormThreeSectionTwoUnits.cs" t="Include" />
+        </e>
+        <e p="Form5" t="Include">
+          <e p="DataObjects" t="Include">
+            <e p="F5ItemAnswerData.cs" t="Include" />
+          </e>
+          <e p="FormFiveItemUsersControl.cs" t="Include" />
+          <e p="FormFiveMaterialsControl.cs" t="Include" />
+          <e p="FormFiveUnitsControl.cs" t="Include" />
+        </e>
+        <e p="FormSix" t="Include">
+          <e p="DataObjects" t="Include">
+            <e p="F6AnswerData.cs" t="Include" />
+            <e p="F6ServicesAnswerData.cs" t="Include" />
+            <e p="F6TreatmentAnswerData.cs" t="Include" />
+            <e p="F6TreatmentCostAnswerData.cs" t="Include" />
+          </e>
+          <e p="SectionFive" t="Include">
+            <e p="Education.cs" t="Include" />
+            <e p="PreSchoolEduCost.cs" t="Include" />
+          </e>
+          <e p="SectionFour" t="Include">
+            <e p="TransportationCost.cs" t="Include" />
+          </e>
+          <e p="SectionSeven" t="Include">
+            <e p="GatheringAndHunting.cs" t="Include" />
+            <e p="Harvesting.cs" t="Include" />
+            <e p="HarvestProcessing.cs" t="Include" />
+            <e p="HarvestSale.cs" t="Include" />
+            <e p="LivestockAtTheBeginning.cs" t="Include" />
+            <e p="LivestockAtTheEnd.cs" t="Include" />
+            <e p="LivestockPurchase.cs" t="Include" />
+            <e p="LivestockSale.cs" t="Include" />
+            <e p="ObtainedThroughGatheringAndHuntingProductsSale.cs" t="Include" />
+            <e p="PlotCosts.cs" t="Include" />
+            <e p="ProductsSale.cs" t="Include" />
+          </e>
+          <e p="SectionSix" t="Include">
+            <e p="AlimonyPayment.cs" t="Include" />
+            <e p="FinancialSupport.cs" t="Include" />
+            <e p="GrainPurchase.cs" t="Include" />
+            <e p="IncomeTax.cs" t="Include" />
+            <e p="Insurance.cs" t="Include" />
+            <e p="Lend.cs" t="Include" />
+            <e p="LoanGetting.cs" t="Include" />
+            <e p="LoanRepayment.cs" t="Include" />
+            <e p="MembershipFee.cs" t="Include" />
+            <e p="OtherExpenses.cs" t="Include" />
+            <e p="OtherTaxes.cs" t="Include" />
+            <e p="PropertyPurchase.cs" t="Include" />
+            <e p="PropertyTax.cs" t="Include" />
+            <e p="SavingsContribution.cs" t="Include" />
+            <e p="SavingsWaste.cs" t="Include" />
+            <e p="TechInspection.cs" t="Include" />
+          </e>
+          <e p="SectionThree" t="Include">
+            <e p="Hospitalization.cs" t="Include" />
+            <e p="HospitalizationCost.cs" t="Include" />
+            <e p="Medicine.cs" t="Include" />
+            <e p="Treatment.cs" t="Include" />
+            <e p="TreatmentCost.cs" t="Include" />
+          </e>
+          <e p="SectionTwo" t="Include">
+            <e p="QuestionOneCost.cs" t="Include" />
+            <e p="QuestionOneOccupancy.cs" t="Include" />
+            <e p="RentPaymentQuestion.cs" t="Include" />
+            <e p="Services.cs" t="Include" />
+          </e>
+        </e>
+        <e p="Interfaces" t="Include">
+          <e p="IControl.cs" t="Include" />
+          <e p="IExecutor.cs" t="Include" />
+        </e>
+        <e p="obj" t="ExcludeRecursive">
+          <e p="Debug" t="Include">
+            <e p="netcoreapp2.2" t="Include">
+              <e p="CapiSample.AssemblyInfo.cs" t="Include" />
+            </e>
+          </e>
+        </e>
+        <e p="Program.cs" t="Include" />
+        <e p="Properties" t="Include">
+          <e p="PublishProfiles" t="Include">
+            <e p="FolderProfile.pubxml" t="Include" />
+          </e>
+        </e>
+        <e p="Reports" t="Include">
+          <e p="FormThreeSectionTwoSupplySources-2019.08.14-14.18.txt" t="Include" />
+        </e>
+      </e>
+      <e p="CapiSample.sln" t="IncludeFlat" />
+      <e p="packages" t="ExcludeRecursive" />
+    </e>
+  </component>
+</project>
