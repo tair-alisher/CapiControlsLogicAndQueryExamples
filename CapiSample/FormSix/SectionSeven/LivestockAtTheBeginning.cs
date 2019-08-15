@@ -17,25 +17,27 @@ namespace CapiSample.FormSix.SectionSeven
 
         private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(livestockAmountMustBeGreaterThanZeroQuery);
+            var wrongAnswers = base.ExecuteQuery(livestockAmountMustBeGreaterThanZeroQuery);
             using (var writer = File.AppendText(file.Name))
             {
-                foreach (var answer in answers)
-                {
-                    if (!answer.ValidRow)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; количество голов скота на начало года должно быть больше нуля.");
-                }
+                foreach (var wrongAnswer in wrongAnswers)
+                    base.WriteError(writer, wrongAnswer);
             }
             file.Close();
         }
 
-        private readonly string livestockAmountMustBeGreaterThanZeroQuery = @"select s.summaryid as InterviewId
+        private readonly string livestockAmountMustBeGreaterThanZeroQuery = @"select
+    s.summaryid as InterviewId
+    ,'Форма 6' as Form
+    ,'Раздел 7' as Section
+    ,'Вопрос 13' as QuestionNumber
+    ,'Какой скот, птица или другие животные есть у Вас в наличии?' as QuestionText
+    ,'Количество голов скота на начало отчетного квартала должно быть больше нуля' as InfoMessage
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate
     ,s.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-    ,(i.asdouble > 0) as ValidRow
 from readside.interviews as i
     join readside.questionnaire_entities as qe
         on i.entityid = qe.id
@@ -45,7 +47,7 @@ from readside.interviews as i
         on i_id.interviewid = s.interviewid
 where qe.stata_export_caption = 'f6r7q13A1'
     and (
-		select _i.asint
+        select _i.asint
         from readside.interviews as _i
             join readside.questionnaire_entities as _qe
                 on _i.entityid = _qe.id
@@ -54,7 +56,8 @@ where qe.stata_export_caption = 'f6r7q13A1'
         where _id.interviewid = i_id.interviewid
             and _qe.stata_export_caption = 'f6r7q12'
         limit 1
-	) = 1
+    ) = 1
+    and (i.asdouble > 0) is false
 order by s.interviewid";
     }
 }

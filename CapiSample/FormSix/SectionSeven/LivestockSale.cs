@@ -17,25 +17,37 @@ namespace CapiSample.FormSix.SectionSeven
 
         public void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(livestockSaleValueMustBeGreaterThanThousandQuery);
+            var wrongAnswers = base.ExecuteQuery(livestockSaleValueMustBeGreaterThanThousandQuery);
             using (var writer = File.AppendText(file.Name))
             {
-                foreach (var answer in answers)
-                {
-                    if (!answer.ValidRow)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; стоимость продажи скота за соответствующий месяц должна быть больше тысячи сомов.");
-                }
+                foreach (var wrongAnswer in wrongAnswers)
+                    base.WriteError(writer, wrongAnswer);
             }
             file.Close();
         }
 
-        private readonly string livestockSaleValueMustBeGreaterThanThousandQuery = @"select s.summaryid as InterviewId
+        private readonly string livestockSaleValueMustBeGreaterThanThousandQuery = @"select
+    s.summaryid as InterviewId
+    ,'Форма 6' as Form
+    ,'Раздел 7' as Section
+    ,'Вопрос 13' as QuestionNumber
+    ,'Какой скот, птица или другие животные есть у Вас в наличии?' as QuestionText
+    ,'Сумма, на которую был продан скот, должна быть больше тысячи сомов' as InfoMessage
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate
     ,s.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-    ,(
+from readside.interviews as i
+    join readside.questionnaire_entities as qe
+        on i.entityid = qe.id
+    join readside.interviews_id as i_id
+        on i.interviewid = i_id.id
+    join readside.interviewsummaries as s
+        on i_id.interviewid = s.interviewid
+where qe.stata_export_caption in ('f6r7q13A121', 'f6r7q13A122', 'f6r7q13A123')
+    and i.asdouble > 0
+    and (
         (select _i.asdouble
         from readside.interviews as _i
             join readside.questionnaire_entities as _qe
@@ -48,16 +60,7 @@ namespace CapiSample.FormSix.SectionSeven
             and _qe.parentid = qe.parentid
             and _i.rostervector = i.rostervector
         limit 1
-    ) > 1000) as ValidRow
-from readside.interviews as i
-    join readside.questionnaire_entities as qe
-        on i.entityid = qe.id
-    join readside.interviews_id as i_id
-        on i.interviewid = i_id.id
-    join readside.interviewsummaries as s
-        on i_id.interviewid = s.interviewid
-where qe.stata_export_caption in ('f6r7q13A121', 'f6r7q13A122', 'f6r7q13A123')
-    and i.asdouble > 0
+    ) > 1000) is false
 order by s.interviewid";
     }
 }
