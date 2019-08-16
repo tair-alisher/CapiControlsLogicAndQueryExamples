@@ -1,12 +1,11 @@
 ﻿using CapiSample.CommonClasses;
-using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.IO;
 
 namespace CapiSample.FormSix.SectionTwo
 {
-    internal class QuestionOneCost : BaseControl<F6AnswerData>, IControl
+    internal class QuestionOneCost : BaseControl<AnswerData>, IControl
     {
         public QuestionOneCost(string connection) : base(connection) { }
 
@@ -18,25 +17,40 @@ namespace CapiSample.FormSix.SectionTwo
 
         private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(query);
+            var wrongAnswers = base.ExecuteQuery(answersWithInvalidValuesQuery);
             using (var writer = File.AppendText(file.Name))
             {
-                foreach (var answer in answers)
-                    if (answer.Cost == null || answer.Cost == 0)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; должна быть указана стоимость купленного топлива.");
+                foreach (var wrongAnswer in wrongAnswers)
+                    base.WriteError(writer, wrongAnswer);
             }
             file.Close();
         }
 
-        private readonly string query = @"select summary.summaryid as InterviewId
+        private readonly string answersWithInvalidValuesQuery = @"select
+    summary.summaryid as InterviewId
+    ,'Форма 6' as Form
+    ,'Раздел 2' as Section
+    ,'Вопрос 1.1' as QuestionNumber
+    ,'Какие виды топлива Вы приобрели и как израсходовали?' as QuestionText
+    ,'Сумма, уплаченная за топливо, должна быть больше нуля' as InfoMessage
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
-    ,interview.asdouble as Amount,
-    (
-        select s_interview.asdouble
+    ,interview.asdouble as Amount
+from readside.interviews as interview
+    join readside.questionnaire_entities as qe
+        on interview.entityid = qe.id
+    join readside.interviews_id as interview_id
+        on interview.interviewid = interview_id.id
+    join readside.interviewsummaries as summary
+        on interview_id.interviewid = summary.interviewid
+where qe.stata_export_caption like 'f6r2q11A_3'
+    and interview.asdouble is not null
+    and interview.asdouble != 0
+    and (
+        (select s_interview.asdouble
         from readside.interviews as s_interview
             join readside.questionnaire_entities as s_qe
                 on s_interview.entityid = s_qe.id
@@ -51,17 +65,7 @@ namespace CapiSample.FormSix.SectionTwo
             and s_interview.rostervector = interview.rostervector
         order by summary.interviewid
         limit 1
-    ) as Cost
-from readside.interviews as interview
-    join readside.questionnaire_entities as qe
-        on interview.entityid = qe.id
-    join readside.interviews_id as interview_id
-        on interview.interviewid = interview_id.id
-    join readside.interviewsummaries as summary
-        on interview_id.interviewid = summary.interviewid
-where qe.stata_export_caption like 'f6r2q11A_3'
-    and interview.asdouble is not null
-        and interview.asdouble != 0
+    ) > 0) is false
 order by summary.interviewid";
     }
 }

@@ -13,44 +13,33 @@ namespace CapiSample.FormSix.SectionTwo
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
-            Console.WriteLine("Коммунальные услуги (льготы). Проверено.");
+            Console.WriteLine("Раздел 2. Вопрос 12. Оплата за коммунальные услуги и электроэнергию. Проверено.");
         }
 
         private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(query);
+            var wrongAnswers = base.ExecuteQuery(answersWithInvalidValuesQuery);
             using (var writer = File.AppendText(file.Name))
             {
-                foreach (var answer in answers)
-                    if (answer.BenefitPercentage == null || answer.BenefitPercentage <= 0)
-                        writer.WriteLine($"interview: {answer.InterviewKey};");
+                foreach (var wrongAnswer in wrongAnswers)
+                    base.WriteError(writer, wrongAnswer);
             }
             file.Close();
         }
 
-        // выбрать данные интервью,
-        // в которых на вопрос "пользуетесь ли льготами..." отвечено "да"
-        private readonly string query = @"select summary.summaryid as InterviewId
+        private readonly string answersWithInvalidValuesQuery = @"select
+    summary.summaryid as InterviewId
+    ,'Форма 6' as Form
+    ,'Раздел 2' as Section
+    ,'Вопрос 12' as QuestionNumber
+    ,'Оплата за коммунальные услуги и электроэнергию' as QuestionText
+    ,'Необходимо указать процент льгот за услугу, при оплате которой вы пользуетесь льготами' as InfoMessage
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
     ,interview.rostervector as ServiceCode
-    ,interview.asint as HasBenefit
-    ,(
-        select _interview.asdouble
-        from readside.interviews as _interview
-            join readside.questionnaire_entities as _qe
-                on _interview.entityid = _qe.id
-            join readside.interviews_id as _interview_id
-                on _interview.interviewid = _interview_id.id
-        where _interview_id.interviewid = interview_id.interviewid
-            and _interview.rostervector = interview.rostervector
-            and _qe.parentid = qe.parentid
-            and _qe.stata_export_caption = 'f6r2q12A5'
-        limit 1
-    ) BenefitPercentage
 from readside.interviews as interview
     join readside.questionnaire_entities as qe
         on interview.entityid = qe.id
@@ -58,8 +47,21 @@ from readside.interviews as interview
         on interview.interviewid = interview_id.id
     join readside.interviewsummaries as summary
         on interview_id.interviewid = summary.interviewid
-where qe.stata_export_caption = 'f6r2q12A4'
-    and interview.asint = 1
+where qe.stata_export_caption = 'f6r2q12A5'
+    and (
+        select _i.asint
+        from readside.interviews as _i
+            join readside.questionnaire_entities as _qe
+                on _i.entityid = _qe.id
+            join readside.interviews_id as _id
+                on _i.interviewid = _id.id
+        where _qe.stata_export_caption = 'f6r2q12A4'
+            and _id.interviewid = interview_id.interviewid
+            and _i.rostervector = interview.rostervector
+            and _qe.parentid = qe.parentid
+        limit 1
+    ) = 1
+    and (interview.asdouble > 0) is false
 order by summary.interviewid";
     }
 }
