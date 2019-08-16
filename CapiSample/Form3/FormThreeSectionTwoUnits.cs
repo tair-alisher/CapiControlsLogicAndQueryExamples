@@ -57,7 +57,7 @@ cte_valid_products_sht as (
     ,'Форма 3' as Form
     ,'Раздел 2' as Section
     ,'Вопрос 1' as QuestionNumber
-    ,'Потребление продуктов питания, напитков и табачных изделий' as QuestionText
+    ,'Потребление продуктов питания, напитков и табачных изделий (единицы измерений)' as QuestionText
     ,coalesce(
         (select title from cte_all_products where code::text = interview.rostervector),
         'код продукта не найден в справочнике') as InfoMessage
@@ -85,7 +85,7 @@ union all
     ,'Форма 3' as Form
     ,'Раздел 2' as Section
     ,'Вопрос 1' as QuestionNumber
-    ,'Потребление продуктов питания, напитков и табачных изделий' as QuestionText
+    ,'Потребление продуктов питания, напитков и табачных изделий (единицы измерений)' as QuestionText
     ,coalesce(
         (select title from cte_all_products where code::text = interview.rostervector),
         'код продукта не найден в справочнике') as InfoMessage
@@ -113,7 +113,7 @@ union all
     ,'Форма 3' as Form
     ,'Раздел 2' as Section
     ,'Вопрос 1' as QuestionNumber
-    ,'Потребление продуктов питания, напитков и табачных изделий' as QuestionText
+    ,'Потребление продуктов питания, напитков и табачных изделий (единицы измерений)' as QuestionText
     ,coalesce(
         (select title from cte_all_products where code::text = interview.rostervector),
         'код продукта не найден в справочнике') as InfoMessage

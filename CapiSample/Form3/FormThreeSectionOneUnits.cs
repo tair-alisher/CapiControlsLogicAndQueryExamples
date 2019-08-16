@@ -57,7 +57,7 @@ cte_valid_products_sht as (
     ,'Форма 3' as Form
     ,'Раздел 1' as Section
     ,'Вопрос 1' as QuestionNumber
-    ,'Покупка продуктов питания, напитков и табачных изделий' as QuestionText
+    ,'Покупка продуктов питания, напитков и табачных изделий (единицы измерений)' as QuestionText
 	,coalesce((select title from cte_all_products where code::integer = (
         select sub_interview.asint
         from readside.interviews sub_interview
@@ -99,7 +99,7 @@ union all
     ,'Форма 3' as Form
     ,'Раздел 1' as Section
     ,'Вопрос 1' as QuestionNumber
-    ,'Покупка продуктов питания, напитков и табачных изделий' as QuestionText
+    ,'Покупка продуктов питания, напитков и табачных изделий (единицы измерений)' as QuestionText
     ,coalesce((select title from cte_all_products where code::integer = (
         select sub_interview.asint
         from readside.interviews sub_interview
@@ -141,7 +141,7 @@ union all
     ,'Форма 3' as Form
     ,'Раздел 1' as Section
     ,'Вопрос 1' as QuestionNumber
-    ,'Покупка продуктов питания, напитков и табачных изделий' as QuestionText
+    ,'Покупка продуктов питания, напитков и табачных изделий (единицы измерений)' as QuestionText
     ,coalesce((select title from cte_all_products where code::integer = (
         select sub_interview.asint
         from readside.interviews sub_interview

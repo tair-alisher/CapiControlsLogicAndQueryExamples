@@ -37,4 +37,4 @@ CapiSample/bin/Debug/netcoreapp2.2/*.json
 CapiSample/bin/Debug/netcoreapp2.2/*.dll
 CapiSample/bin/Debug/netcoreapp2.2/*.pdb
 CapiSample/bin/Debug/netcoreapp2.2/Reports/
-
+CapiSample/Reports/

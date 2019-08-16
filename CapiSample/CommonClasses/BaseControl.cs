@@ -9,11 +9,6 @@ namespace CapiSample.CommonClasses
 {
     internal abstract class BaseControl<T> where T : class
     {
-        // Items
-        protected string ValidItemsByUnitsFileName = @"Catalogs/ItemsByUnits.json";
-        protected string ValidItemsByMaterialsFileName = @"Catalogs/ItemsByMaterials.json";
-        protected string ValidItemsByUsersFileName = @"Catalogs/ItemsByUsers.json";
-
         protected string ReportsFolderName = "Reports";
 
         protected readonly string Connection;

@@ -5,6 +5,7 @@
     <e p="C:\Users\atairakhunov\.Rider2019.1\system\resharper-host\local\Transient\ReSharperHost\v191\SolutionCaches\_CapiSample.1234369261.00" t="ExcludeRecursive" />
     <e p="D:\Code\capi_projects\CapiSample" t="IncludeFlat">
       <e p="CapiSample" t="IncludeRecursive">
+        <e p="appsettings.json" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="CapiSample.csproj" t="IncludeRecursive" />
         <e p="CommonClasses" t="Include">
@@ -59,7 +60,6 @@
             <e p="HarvestProcessing.cs" t="Include" />
             <e p="HarvestSale.cs" t="Include" />
             <e p="LivestockAtTheBeginning.cs" t="Include" />
-            <e p="LivestockAtTheEnd.cs" t="Include" />
             <e p="LivestockPurchase.cs" t="Include" />
             <e p="LivestockSale.cs" t="Include" />
             <e p="ObtainedThroughGatheringAndHuntingProductsSale.cs" t="Include" />
@@ -116,7 +116,9 @@
           </e>
         </e>
         <e p="Reports" t="Include">
-          <e p="FormThreeSectionTwoSupplySources-2019.08.14-14.18.txt" t="Include" />
+          <e p="FormFiveItemUsersControl-2019.08.16-09.53.txt" t="Include" />
+          <e p="FormFiveMaterialsControl-2019.08.16-09.53.txt" t="Include" />
+          <e p="FormFiveUnitsControl-2019.08.16-09.53.txt" t="Include" />
         </e>
       </e>
       <e p="CapiSample.sln" t="IncludeFlat" />

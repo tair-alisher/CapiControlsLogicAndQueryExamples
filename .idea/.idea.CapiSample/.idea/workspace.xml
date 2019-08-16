@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b003de-3cfd-448d-a501-aae4c94b2401" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/Form3/FormThreeSectionOneUnits.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/Form3/FormThreeSectionOneUnits.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/Form3/FormThreeSectionTwoSupplySources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/Form3/FormThreeSectionTwoSupplySources.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/Form3/FormThreeSectionTwoUnits.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/Form3/FormThreeSectionTwoUnits.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/Form5/FormFiveItemUsersControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/Form5/FormFiveItemUsersControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/Form5/FormFiveMaterialsControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/Form5/FormFiveMaterialsControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/Reports/FormThreeSectionTwoSupplySources-2019.08.14-14.18.txt" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -11,88 +21,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-              <folding>
-                <marker date="1565770687398" expanded="false" signature="6:111" ph="..." />
-                <marker date="1565770687398" expanded="true" signature="147:1626" ph="{...}" />
-                <marker date="1565770687398" expanded="true" signature="208:1624" ph="{...}" />
-                <marker date="1565770687398" expanded="true" signature="852:909" ph="{...}" />
-                <marker date="1565770687398" expanded="true" signature="952:1077" ph="{...}" />
-                <marker date="1565770687398" expanded="true" signature="1131:1298" ph="{...}" />
-                <marker date="1565770687398" expanded="true" signature="1359:1618" ph="{...}" />
-                <marker date="1565770687398" expanded="true" signature="1504:1576" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CapiSample/Program.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="34" column="84" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="84" />
-              <folding>
-                <marker date="1562644219404" expanded="false" signature="6:101" ph="..." />
-                <marker date="1562644219404" expanded="true" signature="123:2160" ph="{...}" />
-                <marker date="1562644219404" expanded="true" signature="143:2158" ph="{...}" />
-                <marker date="1562644219404" expanded="true" signature="189:2152" ph="{...}" />
-                <marker date="1562644219404" expanded="true" signature="224:2142" ph="{...}" />
-                <marker date="1562644219404" expanded="true" signature="1094:1670" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CapiSample/Executors/FormFive/Executor.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
-              <folding>
-                <marker date="1562644206322" expanded="false" signature="6:66" ph="..." />
-                <marker date="1562644206322" expanded="true" signature="107:1262" ph="{...}" />
-                <marker date="1562644206322" expanded="true" signature="149:1260" ph="{...}" />
-                <marker date="1562644206322" expanded="true" signature="244:302" ph="{...}" />
-                <marker date="1562644206322" expanded="true" signature="386:1009" ph="{...}" />
-                <marker date="1562644206322" expanded="true" signature="412:999" ph="{...}" />
-                <marker date="1562644206322" expanded="true" signature="506:952" ph="{...}" />
-                <marker date="1562644206322" expanded="true" signature="1049:1254" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="36">
-              <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
-              <folding>
-                <marker date="1562296233927" expanded="false" signature="6:189" ph="..." />
-                <marker date="1562296233927" expanded="true" signature="217:3608" ph="{...}" />
-                <marker date="1562296233927" expanded="true" signature="301:3606" ph="{...}" />
-                <marker date="1562296233927" expanded="true" signature="491:785" ph="{...}" />
-                <marker date="1562296233927" expanded="true" signature="817:1241" ph="{...}" />
-                <marker date="1562296233927" expanded="true" signature="1011:1231" ph="{...}" />
-                <marker date="1562296233927" expanded="true" signature="1355:1851" ph="{...}" />
-                <marker date="1562296233927" expanded="true" signature="1581:1815" ph="{...}" />
-                <marker date="1562296233927" expanded="true" signature="1934:2022" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveMaterialsControl.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveItemUsersControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs" root0="FORCE_HIGHLIGHTING" />
@@ -101,7 +37,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/CapiSample/Form5/FormFiveMaterialsControl.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/Form5/FormFiveItemUsersControl.cs" />
         <option value="$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs" />
       </list>
     </option>
   </component>
@@ -124,6 +63,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="FileSystemExplorer" />
       <pane id="AssemblyExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
@@ -137,12 +77,17 @@
               <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
               <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
             </path>
+            <path>
+              <item name="" type="784c90a0:SolutionExplorerRootNode" />
+              <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="Form5" type="24d0babc:SolutionExplorerModelNode" />
+            </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
-      <pane id="FileSystemExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -197,11 +142,12 @@
       <updated>1565664934531</updated>
       <workItem from="1565664954441" duration="1909000" />
       <workItem from="1565769299563" duration="671000" />
+      <workItem from="1565922966115" duration="3986000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2580000" />
+    <option name="totallyTimeSpent" value="6566000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -215,14 +161,13 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18550107" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14712153" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Build" weight="0.32911393" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32911393" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39978904" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -234,6 +179,7 @@
       <window_info anchor="bottom" id="Unit Tests" order="12" />
       <window_info anchor="bottom" id="Terminal" order="13" />
       <window_info anchor="bottom" id="Event Log" order="14" side_tool="true" />
+      <window_info anchor="bottom" id="Build" order="15" weight="0.32911393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -258,41 +204,9 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-          <folding>
-            <marker date="1565770687398" expanded="false" signature="6:111" ph="..." />
-            <marker date="1565770687398" expanded="true" signature="147:1626" ph="{...}" />
-            <marker date="1565770687398" expanded="true" signature="208:1624" ph="{...}" />
-            <marker date="1565770687398" expanded="true" signature="852:909" ph="{...}" />
-            <marker date="1565770687398" expanded="true" signature="952:1077" ph="{...}" />
-            <marker date="1565770687398" expanded="true" signature="1131:1298" ph="{...}" />
-            <marker date="1565770687398" expanded="true" signature="1359:1618" ph="{...}" />
-            <marker date="1565770687398" expanded="true" signature="1504:1576" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CapiSample/Program.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="34" column="84" selection-start-line="34" selection-start-column="68" selection-end-line="34" selection-end-column="84" />
-          <folding>
-            <marker date="1562644219404" expanded="false" signature="6:101" ph="..." />
-            <marker date="1562644219404" expanded="true" signature="123:2160" ph="{...}" />
-            <marker date="1562644219404" expanded="true" signature="143:2158" ph="{...}" />
-            <marker date="1562644219404" expanded="true" signature="189:2152" ph="{...}" />
-            <marker date="1562644219404" expanded="true" signature="224:2142" ph="{...}" />
-            <marker date="1562644219404" expanded="true" signature="1094:1670" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/CapiSample/Executors/FormFive/Executor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
+        <state relative-caret-position="276">
           <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
             <marker date="1562644206322" expanded="false" signature="6:66" ph="..." />
@@ -307,20 +221,80 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="39" column="56" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="56" />
+          <folding>
+            <marker date="1565927025305" expanded="false" signature="6:111" ph="..." />
+            <marker date="1565927025305" expanded="true" signature="147:1680" ph="{...}" />
+            <marker date="1565927025305" expanded="true" signature="208:1678" ph="{...}" />
+            <marker date="1565927025305" expanded="true" signature="364:421" ph="{...}" />
+            <marker date="1565927025305" expanded="true" signature="464:589" ph="{...}" />
+            <marker date="1565927025305" expanded="true" signature="643:810" ph="{...}" />
+            <marker date="1565927025305" expanded="true" signature="871:1130" ph="{...}" />
+            <marker date="1565927025305" expanded="true" signature="1016:1088" ph="{...}" />
+            <marker date="1565927025305" expanded="true" signature="1210:1672" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding>
+            <marker date="1562644219404" expanded="false" signature="6:101" ph="..." />
+            <marker date="1562644219404" expanded="true" signature="123:2160" ph="{...}" />
+            <marker date="1562644219404" expanded="true" signature="143:2158" ph="{...}" />
+            <marker date="1562644219404" expanded="true" signature="189:2152" ph="{...}" />
+            <marker date="1562644219404" expanded="true" signature="224:2142" ph="{...}" />
+            <marker date="1562644219404" expanded="true" signature="1094:1670" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveItemUsersControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="386" column="27" lean-forward="true" selection-start-line="31" selection-start-column="66" selection-end-line="386" selection-end-column="27" />
+          <folding>
+            <marker date="1565924606035" expanded="false" signature="6:189" ph="..." />
+            <marker date="1565924606035" expanded="true" signature="217:173178" ph="{...}" />
+            <marker date="1565924606035" expanded="true" signature="305:173176" ph="{...}" />
+            <marker date="1565924606035" expanded="true" signature="424:599" ph="{...}" />
+            <marker date="1565924606035" expanded="true" signature="651:982" ph="{...}" />
+            <marker date="1565924606035" expanded="true" signature="815:946" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveMaterialsControl.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="768">
+          <caret line="504" column="27" lean-forward="true" selection-start-line="31" selection-start-column="66" selection-end-line="504" selection-end-column="27" />
+          <folding>
+            <marker date="1565924587831" expanded="false" signature="6:189" ph="..." />
+            <marker date="1565924587831" expanded="true" signature="217:149564" ph="{...}" />
+            <marker date="1565924587831" expanded="true" signature="305:149562" ph="{...}" />
+            <marker date="1565924587831" expanded="true" signature="424:597" ph="{...}" />
+            <marker date="1565924587831" expanded="true" signature="649:980" ph="{...}" />
+            <marker date="1565924587831" expanded="true" signature="813:944" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="10" column="47" selection-start-line="10" selection-start-column="47" selection-end-line="10" selection-end-column="47" />
+        <state relative-caret-position="744">
+          <caret line="567" column="27" lean-forward="true" selection-start-line="31" selection-start-column="66" selection-end-line="567" selection-end-column="27" />
           <folding>
-            <marker date="1562296233927" expanded="false" signature="6:189" ph="..." />
-            <marker date="1562296233927" expanded="true" signature="217:3608" ph="{...}" />
-            <marker date="1562296233927" expanded="true" signature="301:3606" ph="{...}" />
-            <marker date="1562296233927" expanded="true" signature="491:785" ph="{...}" />
-            <marker date="1562296233927" expanded="true" signature="817:1241" ph="{...}" />
-            <marker date="1562296233927" expanded="true" signature="1011:1231" ph="{...}" />
-            <marker date="1562296233927" expanded="true" signature="1355:1851" ph="{...}" />
-            <marker date="1562296233927" expanded="true" signature="1581:1815" ph="{...}" />
-            <marker date="1562296233927" expanded="true" signature="1934:2022" ph="{...}" />
+            <marker date="1565927020489" expanded="false" signature="6:189" ph="..." />
+            <marker date="1565927020489" expanded="true" signature="217:147187" ph="{...}" />
+            <marker date="1565927020489" expanded="true" signature="301:147185" ph="{...}" />
+            <marker date="1565927020489" expanded="true" signature="416:592" ph="{...}" />
+            <marker date="1565927020489" expanded="true" signature="644:975" ph="{...}" />
+            <marker date="1565927020489" expanded="true" signature="808:939" ph="{...}" />
           </folding>
         </state>
       </provider>
