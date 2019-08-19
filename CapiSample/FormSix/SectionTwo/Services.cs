@@ -1,12 +1,11 @@
 ﻿using CapiSample.CommonClasses;
-using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.IO;
 
 namespace CapiSample.FormSix.SectionTwo
 {
-    internal class Services : BaseControl<F6ServicesAnswerData>, IControl
+    internal class Services : BaseControl<AnswerData>, IControl
     {
         public Services(string connection) : base(connection) { }
 

@@ -1,12 +1,11 @@
 ﻿using CapiSample.CommonClasses;
-using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.IO;
 
 namespace CapiSample.FormSix.SectionTwo
 {
-    internal class RentPaymentQuestion : BaseControl<F6AnswerData>, IControl
+    internal class RentPaymentQuestion : BaseControl<AnswerData>, IControl
     {
         public RentPaymentQuestion(string connection) : base(connection) { }
 
