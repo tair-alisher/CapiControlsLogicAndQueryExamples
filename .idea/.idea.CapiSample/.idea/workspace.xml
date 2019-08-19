@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e9b003de-3cfd-448d-a501-aae4c94b2401" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Hospitalization.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Hospitalization.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/HospitalizationCost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/HospitalizationCost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Medicine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Medicine.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/TreatmentCost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/TreatmentCost.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/RentPaymentQuestion.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/RentPaymentQuestion.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/Services.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/Services.cs" afterDir="false" />
-    </list>
+    <list default="true" id="e9b003de-3cfd-448d-a501-aae4c94b2401" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,7 +9,27 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFour/TransportationCost.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-336">
+              <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="128" selection-end-column="28" />
+              <folding>
+                <marker date="1562659924234" expanded="false" signature="6:91" ph="..." />
+                <marker date="1562659924234" expanded="true" signature="133:5393" ph="{...}" />
+                <marker date="1562659924234" expanded="true" signature="221:5391" ph="{...}" />
+                <marker date="1562659924234" expanded="true" signature="334:466" ph="{...}" />
+                <marker date="1562659924234" expanded="true" signature="518:1036" ph="{...}" />
+                <marker date="1562659924234" expanded="true" signature="693:1000" ph="{...}" />
+                <marker date="1562659924234" expanded="true" signature="742:986" ph="{...}" />
+                <marker date="1562659924234" expanded="true" signature="1046:1430" ph="/* если сумма всех затрат на транспорт (общественный городской + междугородний) ... */" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -44,6 +55,7 @@
     <setting file="file://$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/CommonClasses/AnswerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFour/TransportationCost.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/HarvestSale.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -109,7 +121,7 @@
               <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
               <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
               <item name="FormSix" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="SectionThree" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="SectionFour" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
@@ -172,12 +184,12 @@
       <workItem from="1565769299563" duration="671000" />
       <workItem from="1565922966115" duration="14401000" />
       <workItem from="1565946709463" duration="5486000" />
-      <workItem from="1566182082482" duration="2618000" />
+      <workItem from="1566182082482" duration="4954000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25085000" />
+    <option name="totallyTimeSpent" value="27421000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -190,8 +202,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119936034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.119936034" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -544,6 +557,23 @@
             <marker date="1566184473344" expanded="true" signature="313:520" ph="{...}" />
             <marker date="1566184473344" expanded="true" signature="572:903" ph="{...}" />
             <marker date="1566184473344" expanded="true" signature="736:867" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFour/TransportationCost.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-336">
+          <caret line="38" column="82" selection-start-line="38" selection-start-column="82" selection-end-line="128" selection-end-column="28" />
+          <folding>
+            <marker date="1562659924234" expanded="false" signature="6:91" ph="..." />
+            <marker date="1562659924234" expanded="true" signature="133:5393" ph="{...}" />
+            <marker date="1562659924234" expanded="true" signature="221:5391" ph="{...}" />
+            <marker date="1562659924234" expanded="true" signature="334:466" ph="{...}" />
+            <marker date="1562659924234" expanded="true" signature="518:1036" ph="{...}" />
+            <marker date="1562659924234" expanded="true" signature="693:1000" ph="{...}" />
+            <marker date="1562659924234" expanded="true" signature="742:986" ph="{...}" />
+            <marker date="1562659924234" expanded="true" signature="1046:1430" ph="/* если сумма всех затрат на транспорт (общественный городской + междугородний) ... */" />
           </folding>
         </state>
       </provider>
