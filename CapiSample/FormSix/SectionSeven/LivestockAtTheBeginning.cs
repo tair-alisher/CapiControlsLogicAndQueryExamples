@@ -26,13 +26,45 @@ namespace CapiSample.FormSix.SectionSeven
             file.Close();
         }
 
-        private readonly string livestockAmountMustBeGreaterThanZeroQuery = @"select
+        private readonly string livestockAmountMustBeGreaterThanZeroQuery = @"with cte_livestock as(
+    select
+        unnest(array[1,2,3,4,5,6,7,8,9,10,11,12,13,14,18,19,20,22,23,24,25]) as code,
+        unnest(array[
+            'Коровы'/*1*/
+            ,'Нетели и телки старше года'/*2*/
+            ,'Быки и волы старше года'/*3*/
+            ,'Телята до года'/*4*/
+            ,'Свиньи старше 9 месяцев'/*5*/
+            ,'Подсвинки от 4 до 9 месяце'/*6*/
+            ,'Поросята до 4 месяцев'/*7*/
+            ,'Овцы старше года'/*8*/
+            ,'Ягнята до года'/*9*/
+            ,'Козы старше года'/*10*/
+            ,'Козлята до года'/*11*/
+            ,'Лошади'/*12*/
+            ,'Молодняк лошадей'/*13*/
+            ,'Ослы'/*14*/
+            ,'Птица взрослая'/*18*/
+            ,'Молодняк птицы'/*19*/
+            ,'Яки'/*20*/
+            ,'Кролики'/*22*/
+            ,'Нутрии'/*23*/
+            ,'Пчелы (семей)'/*24*/
+            ,'Другие виды скота'/*25*/
+            ]) as title
+)
+
+select
     s.summaryid as InterviewId
     ,'Форма 6' as Form
     ,'Раздел 7' as Section
     ,'Вопрос 13' as QuestionNumber
     ,'Какой скот, птица или другие животные есть у Вас в наличии?' as QuestionText
-    ,'Количество голов скота на начало отчетного квартала должно быть больше нуля' as InfoMessage
+    ,concat(
+        'Количество голов скота на начало отчетного квартала должно быть больше нуля (',
+        (select title from cte_livestock where code::text = i.rostervector limit 1),
+        ')'
+    )  as InfoMessage
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate
