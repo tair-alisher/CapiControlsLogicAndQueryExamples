@@ -1,120 +1,45 @@
 ﻿using CapiSample.CommonClasses;
-using CapiSample.Form6.DataObjects;
 using CapiSample.Interfaces;
 using System;
 using System.IO;
 
 namespace CapiSample.FormSix.SectionThree
 {
-    internal class Medicine : BaseControl<F6TreatmentCostAnswerData>, IControl
+    internal class Medicine : BaseControl<AnswerData>, IControl
     {
         public Medicine(string connection) : base(connection) { }
 
         public void Execute()
         {
-            var file = base.CreateFile();
-
-            CheckAnsweredQuestionsData(file);
-            Console.WriteLine("Соответствие выбранных типов купленных мед. принадлежностей и фактически отвеченных. Проверено.");
-
-            CheckMedicineCostData(file);
-            Console.WriteLine("Расходы на покупку мед. принадлежностей, лекарств. Проверено.");
+            CheckAnswers(base.CreateFile());
+            Console.WriteLine("Раздел 3. Вопрос 8. Траты на мед покупки без обращения к врачу. Проверено.");
         }
 
-        private void CheckAnsweredQuestionsData(FileStream file)
+        private void CheckAnswers(FileStream file)
         {
-            var answers = base.ExecuteQuery(answeredQuestionsQuery);
+            var wrongAnswers = base.ExecuteQuery(answersWithInvalidValuesQuery);
             using (var writer = File.AppendText(file.Name))
             {
-                foreach (var answer in answers)
-                {
-                    if (answer.NumberOfQuestionsToAnswer != answer.NumberOfActuallyAnswered)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; количество выбранных типов мед. принадлежностей и фактически отвеченных не совпадает.");
-                }
+                foreach (var wrongAnswer in wrongAnswers)
+                    base.WriteError(writer, wrongAnswer);
             }
             file.Close();
         }
 
-        private void CheckMedicineCostData(FileStream file)
-        {
-            var answers = base.ExecuteQuery(medicineCostQuery);
-            using (var writer = File.AppendText(file.Name))
-            {
-                foreach (var answer in answers)
-                {
-                    if (false == answer.IsTreatmentCostAnswered)
-                        writer.WriteLine($"interview: {answer.InterviewKey}; количество расходов на приобретение мед. принадлежностей в один или более месяцев должно быть больше нуля.");
-                }
-            }
-            file.Close();
-        }
-
-        private readonly string answeredQuestionsQuery = @"select summary.summaryid as InterviewId
-    ,summary.key as InterviewKey
-    ,summary.questionnairetitle as QuestionnaireTitle
-    ,summary.updatedate as InterviewDate
-    ,summary.teamleadname as Region
-    ,qe.stata_export_caption as QuestionCode
-    ,array_length(interview.asintarray, 1) as NumberOfQuestionsToAnswer
-    ,(
-        select count(distinct(_interview.rostervector))
-        from readside.interviews as _interview
-            join readside.questionnaire_entities as _qe
-                on _interview.entityid = _qe.id
-            join readside.interviews_id as _interview_id
-                on _interview.interviewid = _interview_id.id
-        where _qe.stata_export_caption in ('f6r3q8A11', 'f6r3q8A12', 'f6r3q8A13')
-            and _interview_id.interviewid = interview_id.interviewid
-    ) as NumberOfActuallyAnswered
-from readside.interviews as interview
-    join readside.questionnaire_entities as qe
-        on interview.entityid = qe.id
-    join readside.interviews_id as interview_id
-        on interview.interviewid = interview_id.id
-    join readside.interviewsummaries as summary
-        on interview_id.interviewid = summary.interviewid
-where qe.stata_export_caption = 'f6r3q8'
-    and interview.asintarray is not null
-order by summary.interviewid";
-
-        private readonly string medicineCostQuery = @"select summary.summaryid as InterviewId
+        private readonly string answersWithInvalidValuesQuery = @"select
+    summary.summaryid as InterviewId
+    ,'Форма 6' as Form
+    ,'Раздел 3' as Section
+    ,'Вопрос 8' as QuestionNumber
+    ,'Сколько Ваша семья потратила на приобретение лекарств и медицинских принадлежностей и оборудования без обращения к врачу?' as QuestionText
+    ,'Расходы на приобретение лекарств за последние три месяца должны быть больше нуля' as InfoMessage
     ,summary.key as InterviewKey
     ,summary.questionnairetitle as QuestionnaireTitle
     ,summary.updatedate as InterviewDate
     ,summary.teamleadname as Region
     ,qe.stata_export_caption as QuestionCode
     ,interview.rostervector as TreatmentType
-    ,((coalesce(interview.asdouble, 0)
-    + coalesce(
-        (
-            select _interview.asdouble
-            from readside.interviews as _interview
-                join readside.questionnaire_entities as _qe
-                    on _interview.entityid = _qe.id
-                join readside.interviews_id as _interview_id
-                    on _interview.interviewid = _interview_id.id
-            where _qe.stata_export_caption = 'f6r3q8A12'
-                and _qe.parentid = qe.parentid
-                and _interview.rostervector = interview.rostervector
-                and _interview.interviewid = interview.interviewid
-            limit 1
-        ), 0)
-    + coalesce(
-        (
-            select _interview.asdouble
-            from readside.interviews as _interview
-                join readside.questionnaire_entities as _qe
-                    on _interview.entityid = _qe.id
-                join readside.interviews_id as _interview_id
-                    on _interview.interviewid = _interview_id.id
-            where _qe.stata_export_caption = 'f6r3q8A13'
-                and _qe.parentid = qe.parentid
-                and _interview.rostervector = interview.rostervector
-                and _interview.interviewid = interview.interviewid
-            limit 1
-        ), 0)
-      ) > 0) as IsTreatmentCostAnswered
-from readside.interviews as interview
+    from readside.interviews as interview
     join readside.questionnaire_entities as qe
         on interview.entityid = qe.id
     join readside.interviews_id as interview_id
@@ -131,6 +56,32 @@ where qe.stata_export_caption = 'f6r3q8A11'
         where _qe.stata_export_caption = 'f6r3q7'
             and _interview_id.interviewid = interview_id.interviewid
         limit 1) = 1
+    and ((coalesce(interview.asdouble, 0)
+    + coalesce(
+        (select _interview.asdouble
+        from readside.interviews as _interview
+            join readside.questionnaire_entities as _qe
+                on _interview.entityid = _qe.id
+            join readside.interviews_id as _interview_id
+                on _interview.interviewid = _interview_id.id
+        where _qe.stata_export_caption = 'f6r3q8A12'
+            and _qe.parentid = qe.parentid
+            and _interview.rostervector = interview.rostervector
+            and _interview.interviewid = interview.interviewid
+        limit 1), 0)
+    + coalesce(
+        (select _interview.asdouble
+        from readside.interviews as _interview
+            join readside.questionnaire_entities as _qe
+                on _interview.entityid = _qe.id
+            join readside.interviews_id as _interview_id
+                on _interview.interviewid = _interview_id.id
+        where _qe.stata_export_caption = 'f6r3q8A13'
+            and _qe.parentid = qe.parentid
+            and _interview.rostervector = interview.rostervector
+            and _interview.interviewid = interview.interviewid
+        limit 1), 0)
+      ) > 0) is false
 order by summary.interviewid";
     }
 }

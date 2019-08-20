@@ -5,19 +5,19 @@ using System.IO;
 
 namespace CapiSample.FormSix.SectionSeven
 {
-    internal class Harvesting : BaseControl<AnswerDataWithValidRow>, IControl
+    internal class HarvestSale : BaseControl<AnswerDataWithValidRow>, IControl
     {
-        public Harvesting(string connection) : base(connection) { }
+        public HarvestSale(string connection) : base(connection) { }
 
         public void Execute()
         {
             CheckAnswers(base.CreateFile());
-            Console.WriteLine("Сбор урожая. Проверено.");
+            Console.WriteLine("Сумма, полученная с продажи урожая. Проверено.");
         }
 
         private void CheckAnswers(FileStream file)
         {
-            var wrongAnswers = base.ExecuteQuery(collectedOrSoldAmountMustBeGreaterThanZeroQuery);
+            var wrongAnswers = base.ExecuteQuery(moneyFromSaleMustBeGreaterThanZeroIfWasSaleQuery);
             using (var writer = File.AppendText(file.Name))
             {
                 foreach (var wrongAnswer in wrongAnswers)
@@ -26,7 +26,7 @@ namespace CapiSample.FormSix.SectionSeven
             file.Close();
         }
 
-        private readonly string collectedOrSoldAmountMustBeGreaterThanZeroQuery = @"with cte_crops as (
+        private readonly string moneyFromSaleMustBeGreaterThanZeroIfWasSaleQuery = @"with cte_crops as (
     select
         unnest(array[
             '15124971'
@@ -175,7 +175,7 @@ select
     ,'Вопрос 6' as QuestionNumber
     ,'Какая культура была собрана или продана?' as QuestionText
     ,concat(
-        'Количество собранного или проданного урожая за последние три месяца должно быть больше нуля (',
+        'Сумма, на которую был продан урожай за последние три месяца должна быть больше нуля (',
         (select title from cte_crops where code = i.rostervector limit 1),
         ')'
     )  as InfoMessage
@@ -191,105 +191,23 @@ from readside.interviews as i
         on i.interviewid = i_id.id
     join readside.interviewsummaries as s
         on i_id.interviewid = s.interviewid
-where qe.stata_export_caption in ('f6r7q71A3', 'f6r7q72A3')
+where qe.stata_export_caption in ('f6r7q71A71', 'f6r7q71A72', 'f6r7q71A73', 'f6r7q72A71', 'f6r7q72A72', 'f6r7q72A73')
+    and i.asdouble > 0
     and (
-        select _i.asint
+        (select _i.asdouble
         from readside.interviews as _i
             join readside.questionnaire_entities as _qe
                 on _i.entityid = _qe.id
             join readside.interviews_id as _id
                 on _i.interviewid = _id.id
-        where _qe.stata_export_caption = 'f6r7q5'
-            and _id.interviewid = i_id.interviewid
+        where _id.interviewid = i_id.interviewid
+            and _qe.stata_export_caption like 'f6r7q7_A8_'
+            and substring(_qe.stata_export_caption, length(_qe.stata_export_caption), 1) = substring(qe.stata_export_caption, length(qe.stata_export_caption), 1)
+            and substring(_qe.stata_export_caption, length(_qe.stata_export_caption) - 3, 1) = substring(qe.stata_export_caption, length(qe.stata_export_caption) - 3, 1)
+            and _qe.parentid = qe.parentid
+            and _i.rostervector = i.rostervector
         limit 1
-    ) = 1
-    and ( -- где количество меньше равно нуля
-    (coalesce(i.asdouble, 0) > 0) -- сколько собрано урожая за три месяца
-     or ((coalesce( -- сколько продано за три месяца (первая группа продуктов)
-        (
-            select _i.asdouble
-                from readside.interviews as _i
-                    join readside.questionnaire_entities as _qe
-                         on _i.entityid = _qe.id
-                    join readside.interviews_id as _id
-                         on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r7q71A71'
-                and _id.interviewid = i_id.interviewid
-                and _i.rostervector = i.rostervector
-                and _qe.parentid = qe.parentid
-            limit 1
-        ), 0)
-    + coalesce(
-        (
-            select _i.asdouble
-                from readside.interviews as _i
-                    join readside.questionnaire_entities as _qe
-                        on _i.entityid = _qe.id
-                    join readside.interviews_id as _id
-                        on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r7q71A72'
-                and _id.interviewid = i_id.interviewid
-                and _i.rostervector = i.rostervector
-                and _qe.parentid = qe.parentid
-            limit 1
-        ), 0)
-      + coalesce(
-        (
-            select _i.asdouble
-                from readside.interviews as _i
-                    join readside.questionnaire_entities as _qe
-                        on _i.entityid = _qe.id
-                    join readside.interviews_id as _id
-                        on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r7q71A73'
-                and _id.interviewid = i_id.interviewid
-                and _i.rostervector = i.rostervector
-                and _qe.parentid = qe.parentid
-            limit 1
-        ), 0)) > 0)
-        or ((coalesce( -- сколько продано за три месяца (вторая группа продкутов)
-        (
-            select _i.asdouble
-                from readside.interviews as _i
-                    join readside.questionnaire_entities as _qe
-                         on _i.entityid = _qe.id
-                    join readside.interviews_id as _id
-                         on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r7q72A71'
-                and _id.interviewid = i_id.interviewid
-                and _i.rostervector = i.rostervector
-                and _qe.parentid = qe.parentid
-            limit 1
-        ), 0)
-    + coalesce(
-        (
-            select _i.asdouble
-                from readside.interviews as _i
-                    join readside.questionnaire_entities as _qe
-                        on _i.entityid = _qe.id
-                    join readside.interviews_id as _id
-                        on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r7q72A72'
-                and _id.interviewid = i_id.interviewid
-                and _i.rostervector = i.rostervector
-                and _qe.parentid = qe.parentid
-            limit 1
-        ), 0)
-      + coalesce(
-        (
-            select _i.asdouble
-                from readside.interviews as _i
-                    join readside.questionnaire_entities as _qe
-                        on _i.entityid = _qe.id
-                    join readside.interviews_id as _id
-                        on _i.interviewid = _id.id
-            where _qe.stata_export_caption = 'f6r7q72A73'
-                and _id.interviewid = i_id.interviewid
-                and _i.rostervector = i.rostervector
-                and _qe.parentid = qe.parentid
-            limit 1
-        ), 0)) > 0)
-    ) is false
+    ) > 0) is false
 order by s.interviewid";
     }
 }

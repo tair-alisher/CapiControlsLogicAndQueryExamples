@@ -112,6 +112,30 @@ namespace CapiSample.Executors.FormSix
                     case "30":
                         control = new Controls.SectionSeven.Harvesting(_connection);
                         break;
+                    case "31":
+                        control = new Controls.SectionSeven.HarvestSale(_connection);
+                        break;
+                    case "32":
+                        control = new Controls.SectionSeven.HarvestProcessing(_connection);
+                        break;
+                    case "33":
+                        control = new Controls.SectionSeven.ProductsSale(_connection);
+                        break;
+                    case "34":
+                        control = new Controls.SectionSeven.GatheringAndHunting(_connection);
+                        break;
+                    case "35":
+                        control = new Controls.SectionSeven.ObtainedThroughGatheringAndHuntingProductsSale(_connection);
+                        break;
+                    case "36":
+                        control = new Controls.SectionSeven.LivestockAtTheBeginning(_connection);
+                        break;
+                    case "37":
+                        control = new Controls.SectionSeven.LivestockPurchase(_connection);
+                        break;
+                    case "38":
+                        control = new Controls.SectionSeven.LivestockSale(_connection);
+                        break;
                     default:
                         control = new Controls.SectionTwo.QuestionOneOccupancy(_connection);
                         break;
@@ -153,6 +177,14 @@ namespace CapiSample.Executors.FormSix
             Console.WriteLine("28. Форма 6. Раздел 6. Прочие налоги.");
             Console.WriteLine("29. Форма 6. Раздел 7. Расходы на участок.");
             Console.WriteLine("30. Форма 6. Раздел 7. Сбор урожая.");
+            Console.WriteLine("31. Форма 6. Раздел 7. Продажа урожая.");
+            Console.WriteLine("32. Форма 6. Раздел 7. Производство продукции.");
+            Console.WriteLine("33. Форма 6. Раздел 7. Продажа продукции.");
+            Console.WriteLine("34. Форма 6. Раздел 7. Сбор продуктов/охота/рыбная ловля.");
+            Console.WriteLine("35. Форма 6. Раздел 7. Продажа продуктов полученных посредством сбора, охоты, рыбной ловли.");
+            Console.WriteLine("36. Форма 6. Раздел 7. Наличие скота на начало отчетного квартала.");
+            Console.WriteLine("37. Форма 6. Раздел 7. Покупка скота.");
+            Console.WriteLine("38. Форма 6. Раздел 7. Продажа скота.");
         }
     }
 }
