@@ -31,7 +31,7 @@ namespace CapiSample.FormSix.SectionSix
     ,'Форма 6' as Form
     ,'Раздел 6' as Section
     ,'Вопрос 25' as QuestionNumber
-    ,'Какую именно сумму давала Ваша семья в долг иил под проценты?' as QuestionText
+    ,'Какую именно сумму давала Ваша семья в долг или под проценты?' as QuestionText
     ,'Указать сумму, которую давали в долг' as InfoMessage
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
