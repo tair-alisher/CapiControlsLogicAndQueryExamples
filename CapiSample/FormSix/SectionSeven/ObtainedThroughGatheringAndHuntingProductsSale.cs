@@ -26,12 +26,38 @@ namespace CapiSample.FormSix.SectionSeven
             file.Close();
         }
 
-        private readonly string moneyFromSaleMustBeGreaterThanZeroQuery = @"select s.summaryid as InterviewId
+        private readonly string moneyFromSaleMustBeGreaterThanZeroQuery = @"with cte_crops as (
+    select
+        unnest(array[
+            '1'
+            ,'2'
+            ,'3'
+            ,'4'
+            ,'5'
+            ,'6'
+            ,'61'
+        ]) as code,
+        unnest(array[
+            'Грибы (кг)'/*1*/
+            ,'Ягоды и фрукты (кг)'/*2*/
+            ,'Орехи (кг)'/*3*/
+            ,'Лекарственные травы (кг)'/*4*/
+            ,'Мясо диких животных и птиц (кг)'/*5*/
+            ,'Рыба (кг)'/*6*/
+            ,'в т.ч. сазан (кг)'/*61*/
+        ]) as title
+)
+
+select s.summaryid as InterviewId
     ,'Форма 6' as Form
     ,'Раздел 7' as Section
     ,'Вопрос 11' as QuestionNumber
     ,'Что именно Вы собирали и как использовали?' as QuestionText
-    ,'Сумма, на которую была продана продукция, должна быть больше нуля' as InfoMessage
+    ,concat(
+        'Сумма, на которую была продана продукция, должна быть больше нуля (',
+        (select title from cte_crops where code = i.rostervector limit 1),
+        ')'
+    )  as InfoMessage
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate

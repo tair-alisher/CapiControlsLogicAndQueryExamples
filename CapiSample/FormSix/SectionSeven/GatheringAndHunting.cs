@@ -26,13 +26,39 @@ namespace CapiSample.FormSix.SectionSeven
             file.Close();
         }
 
-        private readonly string collectedOrSoldAmountMustBeGreaterThanZeroQuery = @"select
+        private readonly string collectedOrSoldAmountMustBeGreaterThanZeroQuery = @"with cte_crops as (
+    select
+        unnest(array[
+            '1'
+            ,'2'
+            ,'3'
+            ,'4'
+            ,'5'
+            ,'6'
+            ,'61'
+        ]) as code,
+        unnest(array[
+            'Грибы (кг)'/*1*/
+            ,'Ягоды и фрукты (кг)'/*2*/
+            ,'Орехи (кг)'/*3*/
+            ,'Лекарственные травы (кг)'/*4*/
+            ,'Мясо диких животных и птиц (кг)'/*5*/
+            ,'Рыба (кг)'/*6*/
+            ,'в т.ч. сазан (кг)'/*61*/
+        ]) as title
+)
+
+select
     s.summaryid as InterviewId
     ,'Форма 6' as Form
     ,'Раздел 7' as Section
     ,'Вопрос 11' as QuestionNumber
     ,'Что именно Вы собирали и как использовали?' as QuestionText
-    ,'Количество проданных/собранных продуктов за последние три месяца должно быть больше нуля' as InfoMessage
+    ,concat(
+        'Количество проданных/собранных продуктов за последние три месяца должно быть больше нуля (',
+        (select title from cte_crops where code = i.rostervector limit 1),
+        ')'
+    )  as InfoMessage
     ,s.key as InterviewKey
     ,s.questionnairetitle as QuestionnaireTitle
     ,s.updatedate as InterviewDate
@@ -57,8 +83,8 @@ where qe.stata_export_caption = 'f6r7q11A3'
             and _id.interviewid = i_id.interviewid
         limit 1
     ) = 1
-	and (
-	(coalesce(i.asdouble, 0) > 0) -- сколько собрано ягод, орехов... за три месяца
+    and (
+    (coalesce(i.asdouble, 0) > 0) -- сколько собрано ягод, орехов... за три месяца
      or ((coalesce( -- сколько продано за три месяца
         (
             select _i.asdouble
