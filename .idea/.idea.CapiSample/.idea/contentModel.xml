@@ -116,21 +116,16 @@
           </e>
         </e>
         <e p="Reports" t="Include">
-          <e p="Education-2019.08.19-11.16.txt" t="Include" />
-          <e p="FormFiveItemUsersControl-2019.08.16-09.53.txt" t="Include" />
-          <e p="FormFiveMaterialsControl-2019.08.16-09.53.txt" t="Include" />
-          <e p="FormFiveUnitsControl-2019.08.16-09.53.txt" t="Include" />
-          <e p="Hospitalization-2019.08.19-09.16.txt" t="Include" />
-          <e p="HospitalizationCost-2019.08.19-09.17.txt" t="Include" />
-          <e p="Medicine-2019.08.19-09.17.txt" t="Include" />
-          <e p="PreSchoolEduCost-2019.08.19-11.16.txt" t="Include" />
-          <e p="QuestionOneCost-2019.08.16-14.18.txt" t="Include" />
-          <e p="QuestionOneOccupancy-2019.08.16-14.18.txt" t="Include" />
-          <e p="RentPaymentQuestion-2019.08.16-14.18.txt" t="Include" />
-          <e p="Services-2019.08.16-14.18.txt" t="Include" />
-          <e p="TransportationCost-2019.08.19-10.34.txt" t="Include" />
-          <e p="Treatment-2019.08.19-09.15.txt" t="Include" />
-          <e p="TreatmentCost-2019.08.19-09.16.txt" t="Include" />
+          <e p="GatheringAndHunting-2019.08.20-09.34.txt" t="Include" />
+          <e p="Harvesting-2019.08.20-09.34.txt" t="Include" />
+          <e p="HarvestProcessing-2019.08.20-09.34.txt" t="Include" />
+          <e p="HarvestSale-2019.08.20-09.34.txt" t="Include" />
+          <e p="LivestockAtTheBeginning-2019.08.20-09.35.txt" t="Include" />
+          <e p="LivestockPurchase-2019.08.20-09.35.txt" t="Include" />
+          <e p="LivestockSale-2019.08.20-09.35.txt" t="Include" />
+          <e p="ObtainedThroughGatheringAndHuntingProductsSale-2019.08.20-09.35.txt" t="Include" />
+          <e p="PlotCosts-2019.08.20-09.34.txt" t="Include" />
+          <e p="ProductsSale-2019.08.20-09.34.txt" t="Include" />
         </e>
       </e>
       <e p="CapiSample.sln" t="IncludeFlat" />

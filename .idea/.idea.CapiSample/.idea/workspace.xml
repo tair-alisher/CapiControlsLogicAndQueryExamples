@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9b003de-3cfd-448d-a501-aae4c94b2401" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionFive/Education.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionFive/Education.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.CapiSample/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/AlimonyPayment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/AlimonyPayment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/FinancialSupport.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/FinancialSupport.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/GrainPurchase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/GrainPurchase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/IncomeTax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/IncomeTax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Insurance.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Insurance.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Lend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Lend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanGetting.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanGetting.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanRepayment.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanRepayment.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/MembershipFee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/MembershipFee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherExpenses.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherExpenses.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherTaxes.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherTaxes.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyPurchase.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyPurchase.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyTax.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyTax.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsContribution.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsContribution.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsWaste.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsWaste.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/TechInspection.cs" beforeDir="false" afterPath="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/TechInspection.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,51 +31,34 @@
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFour/TransportationCost.cs">
+            <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsContribution.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="14" column="58" lean-forward="true" selection-start-line="14" selection-start-column="58" selection-end-line="14" selection-end-column="58" />
+                <state relative-caret-position="108">
+                  <caret line="10" selection-start-line="10" selection-end-line="10" />
                   <folding>
-                    <marker date="1566189224841" expanded="true" signature="6:91" ph="..." />
-                    <marker date="1566189224841" expanded="true" signature="133:6447" ph="{...}" />
-                    <marker date="1566189224841" expanded="true" signature="209:6445" ph="{...}" />
-                    <marker date="1566189224841" expanded="true" signature="322:552" ph="{...}" />
-                    <marker date="1566189224841" expanded="true" signature="604:935" ph="{...}" />
-                    <marker date="1566189224841" expanded="true" signature="768:899" ph="{...}" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/Education.cs">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="768">
-                  <caret line="85" column="28" lean-forward="true" selection-start-line="28" selection-start-column="66" selection-end-line="85" selection-end-column="28" />
-                  <folding>
-                    <marker date="1566190765281" expanded="false" signature="6:91" ph="..." />
-                    <marker date="1566190765281" expanded="true" signature="133:3456" ph="{...}" />
-                    <marker date="1566190765281" expanded="true" signature="200:3454" ph="{...}" />
-                    <marker date="1566190765281" expanded="true" signature="304:465" ph="{...}" />
-                    <marker date="1566190765281" expanded="true" signature="517:848" ph="{...}" />
-                    <marker date="1566190765281" expanded="true" signature="681:812" ph="{...}" />
+                    <marker date="1566271757028" expanded="true" signature="6:91" ph="..." />
+                    <marker date="1566271757028" expanded="true" signature="132:11974" ph="{...}" />
+                    <marker date="1566271757028" expanded="true" signature="209:11972" ph="{...}" />
+                    <marker date="1566271757028" expanded="true" signature="323:487" ph="{...}" />
+                    <marker date="1566271757028" expanded="true" signature="539:870" ph="{...}" />
+                    <marker date="1566271757028" expanded="true" signature="703:834" ph="{...}" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs">
+            <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/LivestockSale.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+                <state relative-caret-position="48">
+                  <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
                   <folding>
-                    <marker date="1566191745559" expanded="true" signature="6:91" ph="..." />
-                    <marker date="1566191745559" expanded="true" signature="133:3522" ph="{...}" />
-                    <marker date="1566191745559" expanded="true" signature="207:3520" ph="{...}" />
-                    <marker date="1566191745559" expanded="true" signature="318:480" ph="{...}" />
-                    <marker date="1566191745559" expanded="true" signature="532:863" ph="{...}" />
-                    <marker date="1566191745559" expanded="true" signature="696:827" ph="{...}" />
+                    <marker date="1565840666166" expanded="false" signature="6:91" ph="..." />
+                    <marker date="1565840666166" expanded="true" signature="134:2485" ph="{...}" />
+                    <marker date="1565840666166" expanded="true" signature="217:2483" ph="{...}" />
+                    <marker date="1565840666166" expanded="true" signature="325:450" ph="{...}" />
+                    <marker date="1565840666166" expanded="true" signature="501:851" ph="{...}" />
+                    <marker date="1565840666166" expanded="true" signature="684:815" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -69,12 +67,29 @@
         </leaf>
       </split-first>
       <split-second>
-        <leaf>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
           <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/AlimonyPayment.cs">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="96">
+                  <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="15" selection-end-column="9" />
+                  <folding>
+                    <marker date="1566194071212" expanded="true" signature="6:91" ph="..." />
+                    <marker date="1566194071212" expanded="true" signature="132:3020" ph="{...}" />
+                    <marker date="1566194071212" expanded="true" signature="204:3018" ph="{...}" />
+                    <marker date="1566194071212" expanded="true" signature="313:478" ph="{...}" />
+                    <marker date="1566194071212" expanded="true" signature="530:861" ph="{...}" />
+                    <marker date="1566194071212" expanded="true" signature="694:825" ph="{...}" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="168">
-                  <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="130" />
+                <state relative-caret-position="96">
+                  <caret line="14" column="130" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="130" />
                   <folding>
                     <marker date="1566184488897" expanded="true" signature="6:91" ph="..." />
                     <marker date="1566184488897" expanded="true" signature="134:6210" ph="{...}" />
@@ -95,8 +110,33 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/Harvesting.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/IncomeTax.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherTaxes.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyTax.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyPurchase.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Program.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/MembershipFee.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/AlimonyPayment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsContribution.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherExpenses.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Insurance.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/GrainPurchase.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanRepayment.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsWaste.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanGetting.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/TechInspection.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/RentPaymentQuestion.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/Services.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/QuestionOneOccupancy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/QuestionOneCost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/DataObjects/F6AnswerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/DataObjects/F6TreatmentAnswerData.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/Education.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFour/TransportationCost.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/LivestockSale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/HarvestSale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/Harvesting.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Hospitalization.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Medicine.cs" root0="FORCE_HIGHLIGHTING" />
@@ -104,21 +144,13 @@
     <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionThree/TreatmentCost.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Executors/FormSix/Executor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Executors/FormFive/Executor.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/RentPaymentQuestion.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/Services.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/QuestionOneOccupancy.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionTwo/QuestionOneCost.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveMaterialsControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveItemUsersControl.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/DataObjects/F6AnswerData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/DataObjects/F6TreatmentAnswerData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/CommonClasses/BaseControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/Form5/FormFiveUnitsControl.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/CapiSample/CommonClasses/AnswerData.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/Education.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFour/TransportationCost.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/HarvestSale.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Lend.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/FinancialSupport.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -134,11 +166,27 @@
         <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/HospitalizationCost.cs" />
         <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Hospitalization.cs" />
         <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/TreatmentCost.cs" />
-        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs" />
         <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Medicine.cs" />
         <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionFour/TransportationCost.cs" />
         <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionFive/Education.cs" />
         <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/AlimonyPayment.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/FinancialSupport.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/GrainPurchase.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/IncomeTax.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Insurance.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Lend.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanGetting.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanRepayment.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/MembershipFee.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherExpenses.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherTaxes.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyPurchase.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyTax.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsWaste.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/TechInspection.cs" />
+        <option value="$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsContribution.cs" />
       </list>
     </option>
   </component>
@@ -161,8 +209,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AssemblyExplorer" />
-      <pane id="FileSystemExplorer" />
       <pane id="SolutionExplorer">
         <subPane>
           <expand>
@@ -186,13 +232,15 @@
               <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
               <item name="CapiSample" type="24d0babc:SolutionExplorerModelNode" />
               <item name="FormSix" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="SectionFive" type="24d0babc:SolutionExplorerModelNode" />
+              <item name="SectionSeven" type="24d0babc:SolutionExplorerModelNode" />
             </path>
           </expand>
           <select />
         </subPane>
         <option name="show-all-files" value="false" />
       </pane>
+      <pane id="FileSystemExplorer" />
+      <pane id="AssemblyExplorer" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -249,12 +297,13 @@
       <workItem from="1565769299563" duration="671000" />
       <workItem from="1565922966115" duration="14401000" />
       <workItem from="1565946709463" duration="5486000" />
-      <workItem from="1566182082482" duration="7505000" />
+      <workItem from="1566182082482" duration="23209000" />
+      <workItem from="1566269025652" duration="3449000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29972000" />
+    <option name="totallyTimeSpent" value="49125000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -269,12 +318,12 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.119936034" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12100213" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32911393" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32911393" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.39978904" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -628,7 +677,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/Education.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="768">
+        <state relative-caret-position="984">
           <caret line="85" column="28" lean-forward="true" selection-start-line="28" selection-start-column="66" selection-end-line="85" selection-end-column="28" />
           <folding>
             <marker date="1566190765281" expanded="false" signature="6:91" ph="..." />
@@ -641,10 +690,235 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs">
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="21" column="13" lean-forward="true" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+          <folding>
+            <marker date="1566191745559" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566191745559" expanded="true" signature="133:3522" ph="{...}" />
+            <marker date="1566191745559" expanded="true" signature="207:3520" ph="{...}" />
+            <marker date="1566191745559" expanded="true" signature="318:480" ph="{...}" />
+            <marker date="1566191745559" expanded="true" signature="532:863" ph="{...}" />
+            <marker date="1566191745559" expanded="true" signature="696:827" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/GrainPurchase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret line="14" column="108" lean-forward="true" selection-start-line="14" selection-start-column="108" selection-end-line="14" selection-end-column="108" />
+          <folding>
+            <marker date="1566199517419" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566199517419" expanded="true" signature="132:3016" ph="{...}" />
+            <marker date="1566199517419" expanded="true" signature="203:3014" ph="{...}" />
+            <marker date="1566199517419" expanded="true" signature="311:485" ph="{...}" />
+            <marker date="1566199517419" expanded="true" signature="537:868" ph="{...}" />
+            <marker date="1566199517419" expanded="true" signature="701:832" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/FinancialSupport.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="29" column="30" lean-forward="true" selection-start-line="29" selection-start-column="30" selection-end-line="29" selection-end-column="30" />
+          <folding>
+            <marker date="1566198820576" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566198820576" expanded="true" signature="132:2992" ph="{...}" />
+            <marker date="1566198820576" expanded="true" signature="206:2990" ph="{...}" />
+            <marker date="1566198820576" expanded="true" signature="317:478" ph="{...}" />
+            <marker date="1566198820576" expanded="true" signature="530:861" ph="{...}" />
+            <marker date="1566198820576" expanded="true" signature="694:825" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/IncomeTax.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="23" column="57" lean-forward="true" selection-start-line="23" selection-start-column="57" selection-end-line="23" selection-end-column="57" />
+          <folding>
+            <marker date="1566200197123" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566200197123" expanded="true" signature="132:3047" ph="{...}" />
+            <marker date="1566200197123" expanded="true" signature="199:3045" ph="{...}" />
+            <marker date="1566200197123" expanded="true" signature="303:493" ph="{...}" />
+            <marker date="1566200197123" expanded="true" signature="545:876" ph="{...}" />
+            <marker date="1566200197123" expanded="true" signature="709:840" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Insurance.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-36">
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <marker date="1566200918877" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566200918877" expanded="true" signature="132:3018" ph="{...}" />
+            <marker date="1566200918877" expanded="true" signature="199:3016" ph="{...}" />
+            <marker date="1566200918877" expanded="true" signature="303:482" ph="{...}" />
+            <marker date="1566200918877" expanded="true" signature="534:865" ph="{...}" />
+            <marker date="1566200918877" expanded="true" signature="698:829" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/Lend.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <marker date="1566203075383" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566203075383" expanded="true" signature="132:3042" ph="{...}" />
+            <marker date="1566203075383" expanded="true" signature="194:3040" ph="{...}" />
+            <marker date="1566203075383" expanded="true" signature="293:469" ph="{...}" />
+            <marker date="1566203075383" expanded="true" signature="521:852" ph="{...}" />
+            <marker date="1566203075383" expanded="true" signature="685:816" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanGetting.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="168">
-          <caret line="14" column="12" lean-forward="true" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="130" />
+          <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
+          <folding>
+            <marker date="1566205424096" expanded="false" signature="6:91" ph="..." />
+            <marker date="1566205424096" expanded="true" signature="132:5495" ph="{...}" />
+            <marker date="1566205424096" expanded="true" signature="201:5493" ph="{...}" />
+            <marker date="1566205424096" expanded="true" signature="307:488" ph="{...}" />
+            <marker date="1566205424096" expanded="true" signature="540:871" ph="{...}" />
+            <marker date="1566205424096" expanded="true" signature="704:835" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/LoanRepayment.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="14" column="74" selection-start-line="14" selection-start-column="74" selection-end-line="14" selection-end-column="74" />
+          <folding>
+            <marker date="1566207492647" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566207492647" expanded="true" signature="132:3015" ph="{...}" />
+            <marker date="1566207492647" expanded="true" signature="203:3013" ph="{...}" />
+            <marker date="1566207492647" expanded="true" signature="311:466" ph="{...}" />
+            <marker date="1566207492647" expanded="true" signature="518:849" ph="{...}" />
+            <marker date="1566207492647" expanded="true" signature="682:813" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/MembershipFee.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="7" column="57" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="57" />
+          <folding>
+            <marker date="1566208828247" expanded="false" signature="6:91" ph="..." />
+            <marker date="1566208828247" expanded="true" signature="132:3012" ph="{...}" />
+            <marker date="1566208828247" expanded="true" signature="203:3010" ph="{...}" />
+            <marker date="1566208828247" expanded="true" signature="311:473" ph="{...}" />
+            <marker date="1566208828247" expanded="true" signature="525:856" ph="{...}" />
+            <marker date="1566208828247" expanded="true" signature="689:820" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherExpenses.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <marker date="1566209357824" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566209357824" expanded="true" signature="132:2995" ph="{...}" />
+            <marker date="1566209357824" expanded="true" signature="203:2993" ph="{...}" />
+            <marker date="1566209357824" expanded="true" signature="311:470" ph="{...}" />
+            <marker date="1566209357824" expanded="true" signature="522:853" ph="{...}" />
+            <marker date="1566209357824" expanded="true" signature="686:817" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/OtherTaxes.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <marker date="1566209733348" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566209733348" expanded="true" signature="132:3039" ph="{...}" />
+            <marker date="1566209733348" expanded="true" signature="200:3037" ph="{...}" />
+            <marker date="1566209733348" expanded="true" signature="305:489" ph="{...}" />
+            <marker date="1566209733348" expanded="true" signature="541:872" ph="{...}" />
+            <marker date="1566209733348" expanded="true" signature="705:836" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyPurchase.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-324">
+          <caret column="6" lean-forward="true" selection-start-column="6" selection-end-column="6" />
+          <folding>
+            <marker date="1566211451132" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566211451132" expanded="true" signature="132:3245" ph="{...}" />
+            <marker date="1566211451132" expanded="true" signature="206:3243" ph="{...}" />
+            <marker date="1566211451132" expanded="true" signature="317:516" ph="{...}" />
+            <marker date="1566211451132" expanded="true" signature="568:899" ph="{...}" />
+            <marker date="1566211451132" expanded="true" signature="732:863" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/PropertyTax.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="113" selection-start-line="14" selection-start-column="113" selection-end-line="14" selection-end-column="113" />
+          <folding>
+            <marker date="1566212615458" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566212615458" expanded="true" signature="132:3059" ph="{...}" />
+            <marker date="1566212615458" expanded="true" signature="201:3057" ph="{...}" />
+            <marker date="1566212615458" expanded="true" signature="307:501" ph="{...}" />
+            <marker date="1566212615458" expanded="true" signature="553:884" ph="{...}" />
+            <marker date="1566212615458" expanded="true" signature="717:848" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/TechInspection.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
+          <folding>
+            <marker date="1566213545571" expanded="false" signature="6:91" ph="..." />
+            <marker date="1566213545571" expanded="true" signature="132:3030" ph="{...}" />
+            <marker date="1566213545571" expanded="true" signature="216:3028" ph="{...}" />
+            <marker date="1566213545571" expanded="true" signature="325:495" ph="{...}" />
+            <marker date="1566213545571" expanded="true" signature="547:878" ph="{...}" />
+            <marker date="1566213545571" expanded="true" signature="711:842" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsWaste.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="14" column="89" selection-start-line="14" selection-start-column="89" selection-end-line="14" selection-end-column="89" />
+          <folding>
+            <marker date="1566213214917" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566213214917" expanded="true" signature="132:2993" ph="{...}" />
+            <marker date="1566213214917" expanded="true" signature="202:2991" ph="{...}" />
+            <marker date="1566213214917" expanded="true" signature="309:479" ph="{...}" />
+            <marker date="1566213214917" expanded="true" signature="531:862" ph="{...}" />
+            <marker date="1566213214917" expanded="true" signature="695:826" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionThree/Treatment.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="96">
+          <caret line="14" column="130" selection-start-line="14" selection-start-column="12" selection-end-line="14" selection-end-column="130" />
           <folding>
             <marker date="1566184488897" expanded="true" signature="6:91" ph="..." />
             <marker date="1566184488897" expanded="true" signature="134:6210" ph="{...}" />
@@ -656,17 +930,47 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionFive/PreSchoolEduCost.cs">
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/AlimonyPayment.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="15" column="9" lean-forward="true" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+        <state relative-caret-position="96">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="15" selection-end-column="9" />
           <folding>
-            <marker date="1566191745559" expanded="true" signature="6:91" ph="..." />
-            <marker date="1566191745559" expanded="true" signature="133:3522" ph="{...}" />
-            <marker date="1566191745559" expanded="true" signature="207:3520" ph="{...}" />
-            <marker date="1566191745559" expanded="true" signature="318:480" ph="{...}" />
-            <marker date="1566191745559" expanded="true" signature="532:863" ph="{...}" />
-            <marker date="1566191745559" expanded="true" signature="696:827" ph="{...}" />
+            <marker date="1566194071212" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566194071212" expanded="true" signature="132:3020" ph="{...}" />
+            <marker date="1566194071212" expanded="true" signature="204:3018" ph="{...}" />
+            <marker date="1566194071212" expanded="true" signature="313:478" ph="{...}" />
+            <marker date="1566194071212" expanded="true" signature="530:861" ph="{...}" />
+            <marker date="1566194071212" expanded="true" signature="694:825" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSix/SavingsContribution.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
+          <folding>
+            <marker date="1566271757028" expanded="true" signature="6:91" ph="..." />
+            <marker date="1566271757028" expanded="true" signature="132:11974" ph="{...}" />
+            <marker date="1566271757028" expanded="true" signature="209:11972" ph="{...}" />
+            <marker date="1566271757028" expanded="true" signature="323:487" ph="{...}" />
+            <marker date="1566271757028" expanded="true" signature="539:870" ph="{...}" />
+            <marker date="1566271757028" expanded="true" signature="703:834" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/CapiSample/FormSix/SectionSeven/LivestockSale.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="48">
+          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+          <folding>
+            <marker date="1565840666166" expanded="false" signature="6:91" ph="..." />
+            <marker date="1565840666166" expanded="true" signature="134:2485" ph="{...}" />
+            <marker date="1565840666166" expanded="true" signature="217:2483" ph="{...}" />
+            <marker date="1565840666166" expanded="true" signature="325:450" ph="{...}" />
+            <marker date="1565840666166" expanded="true" signature="501:851" ph="{...}" />
+            <marker date="1565840666166" expanded="true" signature="684:815" ph="{...}" />
           </folding>
         </state>
       </provider>
